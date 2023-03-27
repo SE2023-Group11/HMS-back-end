@@ -103,7 +103,7 @@ CREATE TABLE `order`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for patient
+-- Table structure for Patient
 -- ----------------------------
 DROP TABLE IF EXISTS `patient`;
 CREATE TABLE `patient`  (
