@@ -6,3 +6,6 @@ spring:
       url: jdbc:mysql:///hms?serverTimezone=UTC
       username: root
       password: 345210
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
