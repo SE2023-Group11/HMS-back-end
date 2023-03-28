@@ -7,14 +7,14 @@ public class Doctor {
     private String doctorMail;
     private String doctorPhone;
     private String doctorPassword;
-    private String doctorSection;
+    private Integer doctorSection;
     private String doctorTitle;
     private boolean doctorStatus;
 
     public Doctor() {
     }
 
-    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, String doctorSection, String doctorTitle, boolean doctorStatus) {
+    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus) {
         this.doctorId = doctorId;
         this.doctorName = doctorName;
         this.doctorNumber = doctorNumber;
@@ -89,11 +89,11 @@ public class Doctor {
         this.doctorPassword = doctorPassword;
     }
 
-    public String getDoctorSection() {
+    public Integer getDoctorSection() {
         return doctorSection;
     }
 
-    public void setDoctorSection(String doctorSection) {
+    public void setDoctorSection(Integer doctorSection) {
         this.doctorSection = doctorSection;
     }
 
