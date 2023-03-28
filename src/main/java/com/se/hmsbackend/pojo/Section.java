@@ -2,15 +2,17 @@ package com.se.hmsbackend.pojo;
 
 public class Section {
     private Integer sectionId;
-    private String sectionName;
+    private String sectionFirname;
+    private String sectionSecname;
     private String sectionIntroduction;
 
     public Section() {
     }
 
-    public Section(Integer sectionId, String sectionName, String sectionIntroduction) {
+    public Section(Integer sectionId, String sectionFirname, String sectionSecname, String sectionIntroduction) {
         this.sectionId = sectionId;
-        this.sectionName = sectionName;
+        this.sectionFirname = sectionFirname;
+        this.sectionSecname = sectionSecname;
         this.sectionIntroduction = sectionIntroduction;
     }
 
@@ -18,7 +20,8 @@ public class Section {
     public String toString() {
         return "Section{" +
                 "sectionId=" + sectionId +
-                ", sectionName='" + sectionName + '\'' +
+                ", sectionFirname='" + sectionFirname + '\'' +
+                ", sectionSecname='" + sectionSecname + '\'' +
                 ", sectionIntroduction='" + sectionIntroduction + '\'' +
                 '}';
     }
@@ -31,12 +34,20 @@ public class Section {
         this.sectionId = sectionId;
     }
 
-    public String getSectionName() {
-        return sectionName;
+    public String getSectionFirname() {
+        return sectionFirname;
     }
 
-    public void setSectionName(String sectionName) {
-        this.sectionName = sectionName;
+    public void setSectionFirname(String sectionFirname) {
+        this.sectionFirname = sectionFirname;
+    }
+
+    public String getSectionSecname() {
+        return sectionSecname;
+    }
+
+    public void setSectionSecname(String sectionSecname) {
+        this.sectionSecname = sectionSecname;
     }
 
     public String getSectionIntroduction() {

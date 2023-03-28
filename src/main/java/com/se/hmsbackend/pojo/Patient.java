@@ -1,5 +1,6 @@
 package com.se.hmsbackend.pojo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Patient {
@@ -9,13 +10,13 @@ public class Patient {
     private String patientMail;
     private String patientPhone;
     private boolean patientSex;
-    private LocalDateTime patientBirthday;
+    private LocalDate patientBirthday;
     private String patientPassword;
 
     public Patient() {
     }
 
-    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDateTime patientBirthday, String patientPassword) {
+    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDate patientBirthday, String patientPassword) {
         this.patientId = patientId;
         this.patientName = patientName;
         this.patientNumber = patientNumber;
@@ -88,11 +89,11 @@ public class Patient {
         this.patientSex = patientSex;
     }
 
-    public LocalDateTime getPatientBirthday() {
+    public LocalDate getPatientBirthday() {
         return patientBirthday;
     }
 
-    public void setPatientBirthday(LocalDateTime patientBirthday) {
+    public void setPatientBirthday(LocalDate patientBirthday) {
         this.patientBirthday = patientBirthday;
     }
 

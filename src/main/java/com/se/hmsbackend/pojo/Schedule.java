@@ -1,11 +1,12 @@
 package com.se.hmsbackend.pojo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Schedule {
     private Integer scheduleId;
     private String doctorId;
-    private LocalDateTime day;
+    private LocalDate day;
     private LocalDateTime timeStart;
     private LocalDateTime timeEnd;
     private Integer scheduleStatus;
@@ -13,7 +14,7 @@ public class Schedule {
     public Schedule() {
     }
 
-    public Schedule(Integer scheduleId, String doctorId, LocalDateTime day, LocalDateTime timeStart, LocalDateTime timeEnd, Integer scheduleStatus) {
+    public Schedule(Integer scheduleId, String doctorId, LocalDate day, LocalDateTime timeStart, LocalDateTime timeEnd, Integer scheduleStatus) {
         this.scheduleId = scheduleId;
         this.doctorId = doctorId;
         this.day = day;
@@ -50,11 +51,11 @@ public class Schedule {
         this.doctorId = doctorId;
     }
 
-    public LocalDateTime getDay() {
+    public LocalDate getDay() {
         return day;
     }
 
-    public void setDay(LocalDateTime day) {
+    public void setDay(LocalDate day) {
         this.day = day;
     }
 
