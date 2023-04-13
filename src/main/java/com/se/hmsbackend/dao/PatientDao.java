@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface PatientDao {
+    @Select("SELECT COUNT(*) FROM patient")
+    public Integer getNum();
     @Select("SELECT * FROM patient WHERE patient_id = #{patientId}")
     public Patient getById(String patientId);
 

@@ -8,6 +8,8 @@ public interface SectionDao {
     @Select("SELECT * FROM section WHERE section_id = #{sectionId}")
     public Section getById(Integer sectionId);
 
+    @Select("SELECT * FROM section WHERE section_secname = #{sectionName}")
+    public Section getBySecname(String sectionName);
     @Insert("INSERT INTO section (section_firname, section_secname, section_introduction)" +
             "VALUES (#{sectionFirname}, #{sectionSecname}, #{sectionIntroduction})")
     @Options(useGeneratedKeys = true,keyProperty = "sectionId")

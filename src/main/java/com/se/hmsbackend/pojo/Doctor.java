@@ -10,11 +10,12 @@ public class Doctor {
     private Integer doctorSection;
     private String doctorTitle;
     private boolean doctorStatus;
+    private String doctorIntroduction;
 
     public Doctor() {
     }
 
-    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus) {
+    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus, String doctorIntroduction) {
         this.doctorId = doctorId;
         this.doctorName = doctorName;
         this.doctorNumber = doctorNumber;
@@ -24,6 +25,7 @@ public class Doctor {
         this.doctorSection = doctorSection;
         this.doctorTitle = doctorTitle;
         this.doctorStatus = doctorStatus;
+        this.doctorIntroduction = doctorIntroduction;
     }
 
     @Override
@@ -35,10 +37,19 @@ public class Doctor {
                 ", doctorMail='" + doctorMail + '\'' +
                 ", doctorPhone='" + doctorPhone + '\'' +
                 ", doctorPassword='" + doctorPassword + '\'' +
-                ", doctorSection='" + doctorSection + '\'' +
+                ", doctorSection=" + doctorSection +
                 ", doctorTitle='" + doctorTitle + '\'' +
                 ", doctorStatus=" + doctorStatus +
+                ", doctorIntroduction='" + doctorIntroduction + '\'' +
                 '}';
+    }
+
+    public String getDoctorIntroduction() {
+        return doctorIntroduction;
+    }
+
+    public void setDoctorIntroduction(String doctorIntroduction) {
+        this.doctorIntroduction = doctorIntroduction;
     }
 
     public String getDoctorId() {
