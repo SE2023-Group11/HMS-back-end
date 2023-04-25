@@ -3,17 +3,19 @@ package com.se.hmsbackend.pojo;
 public class InfoAdmin {
     private Integer infoId;
     private Integer adminId;
-    private String infoBody;
+    private Integer detailId;
     private Integer infoType;
+    private Integer infoStatus;
 
     public InfoAdmin() {
     }
 
-    public InfoAdmin(Integer infoId, Integer adminId, String infoBody, Integer infoType) {
+    public InfoAdmin(Integer infoId, Integer adminId, Integer detailId, Integer infoType, Integer infoStatus) {
         this.infoId = infoId;
         this.adminId = adminId;
-        this.infoBody = infoBody;
+        this.detailId = detailId;
         this.infoType = infoType;
+        this.infoStatus = infoStatus;
     }
 
     @Override
@@ -21,11 +23,11 @@ public class InfoAdmin {
         return "InfoAdmin{" +
                 "infoId=" + infoId +
                 ", adminId=" + adminId +
-                ", infoBody='" + infoBody + '\'' +
+                ", detailId=" + detailId +
                 ", infoType=" + infoType +
+                ", infoStatus=" + infoStatus +
                 '}';
     }
-
     public Integer getInfoId() {
         return infoId;
     }
@@ -42,19 +44,27 @@ public class InfoAdmin {
         this.adminId = adminId;
     }
 
-    public String getInfoBody() {
-        return infoBody;
-    }
-
-    public void setInfoBody(String infoBody) {
-        this.infoBody = infoBody;
-    }
-
     public Integer getInfoType() {
         return infoType;
     }
 
     public void setInfoType(Integer infoType) {
         this.infoType = infoType;
+    }
+
+    public Integer getDetailId() {
+        return detailId;
+    }
+
+    public void setDetailId(Integer detailId) {
+        this.detailId = detailId;
+    }
+
+    public Integer getInfoStatus() {
+        return infoStatus;
+    }
+
+    public void setInfoStatus(Integer infoStatus) {
+        this.infoStatus = infoStatus;
     }
 }

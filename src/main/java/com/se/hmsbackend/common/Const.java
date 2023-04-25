@@ -18,4 +18,7 @@ public class Const {
 //    InfoAdmin
     public static final Integer INFOADMIN_TYPE_REGISTER = 1;//审核医生账号注册
     public static final Integer INFOADMIN_TYPE_UPDATE = 2;//审核医生信息修改
+    public static final Integer INFOADMIN_STATUS_WAITING = 0;
+    public static final Integer INFOADMIN_STATUS_PASSED = 1;
+    public static final Integer INFOADMIN_STATUS_DENYED = 2;
 }
