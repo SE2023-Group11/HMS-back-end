@@ -10,20 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class DoctorController {
     @Autowired
     private DoctorService doctorService;
 
     @PostMapping("/getDoctorInfo")
-    public R<Doctor> getDoctor(@RequestParam String doctorName){
-        Doctor doctor = doctorService.getDoctorInfo(doctorName);
-        if(doctor == null)return R.error("不存在");
-        return R.success(doctor);
+    public R<List<Doctor>> getDoctor(@RequestParam String doctorName){
+        List<Doctor> doctors = doctorService.getDoctorInfo(doctorName);
+        if(doctors.size() == 0)return R.error("不存在");
+        return R.success(doctors);
     }
     @PostMapping("/changeDoctorInfo")
     public R<Doctor> changeDoctorInfo(@RequestParam String id, @RequestParam String info){
-        if(doctorService.changeDoctorInfo(id, info))return R.success(null);
+        Doctor doctor = doctorService.changeDoctorInfo(id, info);
+        if(doctor != null)return R.success(doctor);
         return R.error("修改失败");
     }
 }

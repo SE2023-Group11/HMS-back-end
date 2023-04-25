@@ -2,7 +2,6 @@ package com.se.hmsbackend.pojo;
 
 public class InfoAdmin {
     private Integer infoId;
-    private Integer adminId;
     private Integer detailId;
     private Integer infoType;
     private Integer infoStatus;
@@ -10,9 +9,8 @@ public class InfoAdmin {
     public InfoAdmin() {
     }
 
-    public InfoAdmin(Integer infoId, Integer adminId, Integer detailId, Integer infoType, Integer infoStatus) {
+    public InfoAdmin(Integer infoId, Integer detailId, Integer infoType, Integer infoStatus) {
         this.infoId = infoId;
-        this.adminId = adminId;
         this.detailId = detailId;
         this.infoType = infoType;
         this.infoStatus = infoStatus;
@@ -22,7 +20,6 @@ public class InfoAdmin {
     public String toString() {
         return "InfoAdmin{" +
                 "infoId=" + infoId +
-                ", adminId=" + adminId +
                 ", detailId=" + detailId +
                 ", infoType=" + infoType +
                 ", infoStatus=" + infoStatus +
@@ -34,14 +31,6 @@ public class InfoAdmin {
 
     public void setInfoId(Integer infoId) {
         this.infoId = infoId;
-    }
-
-    public Integer getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(Integer adminId) {
-        this.adminId = adminId;
     }
 
     public Integer getInfoType() {

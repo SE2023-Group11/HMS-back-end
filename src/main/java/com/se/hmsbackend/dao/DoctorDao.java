@@ -3,6 +3,8 @@ package com.se.hmsbackend.dao;
 import com.se.hmsbackend.pojo.Doctor;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface DoctorDao {
     @Select("SELECT COUNT(*) FROM doctor")
@@ -14,7 +16,7 @@ public interface DoctorDao {
     public Doctor getByNumber(String doctorNumber);
 
     @Select("SELECT * FROM doctor WHERE doctor_name = #{doctorName}")
-    public Doctor getByName(String doctorName);
+    public List<Doctor> getByName(String doctorName);
 
     @Insert("INSERT INTO doctor (doctor_id, doctor_name, doctor_number, doctor_mail, doctor_phone, doctor_password, doctor_status, doctor_section,doctor_title,doctor_introduction)" +
             "VALUES (#{doctorId}, #{doctorName}, #{doctorNumber}, #{doctorMail}, #{doctorPhone}, #{doctorPassword}, #{doctorStatus}, #{doctorSection}, #{doctorTitle}, #{doctorIntroduction})" )

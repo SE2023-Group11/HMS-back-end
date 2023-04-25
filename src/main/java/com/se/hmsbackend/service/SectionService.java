@@ -13,11 +13,11 @@ public class SectionService {
     public Section getRoomInfo(String roomName){
         return sectionDao.getBySecname(roomName);
     }
-    public boolean updateRoomInfo(String roomName, String roomInfo){
+    public Section updateRoomInfo(String roomName, String roomInfo){
         Section section = sectionDao.getBySecname(roomName);
-        if(section == null)return false;
+        if(section == null)return section;
         section.setSectionIntroduction(roomInfo);
         sectionDao.updateSection(section);
-        return true;
+        return section;
     }
 }

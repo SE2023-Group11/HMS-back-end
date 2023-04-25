@@ -23,7 +23,8 @@ public class SectionController {
     }
     @PostMapping("/changeRoomInfo")
     public R<Section> changeRoomInfo(@RequestParam String roomName, @RequestParam String roomInfo){
-        if(sectionService.updateRoomInfo(roomName, roomInfo))return R.success(null);
+        Section section =sectionService.updateRoomInfo(roomName, roomInfo);
+        if(section!=null)return R.success(section);
         return R.error("修改失败");
     }
 }

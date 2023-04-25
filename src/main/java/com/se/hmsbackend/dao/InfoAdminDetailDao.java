@@ -15,7 +15,8 @@ public interface InfoAdminDetailDao {
     @Options(useGeneratedKeys = true,keyProperty = "detailId")
     public void addInfo(InfoAdminDetail infoAdminDetail);
 
-    @Update("UPDATE info_admin SET admin_id = #{adminId}, detail_id = #{detailId}, info_type = #{infoType}, info_status = #{infoStatus} WHERE info_id = #{infoId}")
+    @Update("UPDATE info_admin_detail SET doctor_id=#{doctorId}, doctor_name = #{doctorName}, doctor_number = #{doctorNumber}, doctor_mail = #{doctorMail}, doctor_phone = #{doctorPhone}, doctor_introduction = #{doctorIntroduction}," +
+            "doctor_password = #{doctorPassword}, doctor_status = #{doctorStatus}, doctor_section = #{doctorSection}, doctor_title = #{doctorTitle} WHERE detail_id = #{detailId}")
     public void updateInfo(InfoAdminDetail detailAdminDetail);
 
     @Delete("DELETE FROM info_admin_detail WHERE detail_id = #{detailId}")
