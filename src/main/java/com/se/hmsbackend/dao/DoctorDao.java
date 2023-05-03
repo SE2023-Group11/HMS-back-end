@@ -15,6 +15,8 @@ public interface DoctorDao {
     @Select("SELECT * FROM doctor WHERE doctor_number = #{doctorNumber}")
     public Doctor getByNumber(String doctorNumber);
 
+    @Select("SELECT * FROM doctor WHERE doctor_mail = #{doctorMail}")
+    public Doctor getByMail(String doctorMail);
     @Select("SELECT * FROM doctor WHERE doctor_name = #{doctorName}")
     public List<Doctor> getByName(String doctorName);
 
@@ -26,6 +28,9 @@ public interface DoctorDao {
             "doctor_password = #{doctorPassword}, doctor_status = #{doctorStatus}, doctor_section = #{doctorSection}, doctor_title = #{doctorTitle}, doctor_img = #{doctorImg} WHERE doctor_id = #{doctorId}")
     public void updateDoctor(Doctor doctor);
 
+    @Update("UPDATE doctor SET doctor_name = #{doctorName}, doctor_number = #{doctorNumber}, doctor_mail = #{doctorMail}, doctor_phone = #{doctorPhone}, doctor_introduction = #{doctorIntroduction}," +
+            "doctor_status = #{doctorStatus}, doctor_section = #{doctorSection}, doctor_title = #{doctorTitle}, doctor_img = #{doctorImg} WHERE doctor_id = #{doctorId}")
+    public void updateDoctorExceptPW(Doctor doctor);
     @Delete("DELETE FROM doctor WHERE doctor_id = #{doctorId}")
     public void deleteDoctor(Doctor doctor);
 }

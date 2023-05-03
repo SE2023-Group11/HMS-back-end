@@ -21,4 +21,21 @@ public class Const {
     public static final Integer INFOADMIN_STATUS_WAITING = 0;
     public static final Integer INFOADMIN_STATUS_PASSED = 1;
     public static final Integer INFOADMIN_STATUS_DENYED = 2;
+
+//    checkCode
+    public static final Integer CODE_TYPE_DOCTOR_REGISTER = 1;
+    public static final Integer CODE_TYPE_DOCTOR_FORGET = 2;
+    public static final Integer CODE_TYPE_PATIENT_REGISTER = 3;
+    public static final Integer CODE_TYPE_PATIENT_FORGET = 4;
+    public static final String DOCTOR_REGISTER_CODE = "doctorRegisterCode:";
+    public static final String DOCTOR_FORGET_CODE = "doctorForgetCode:";
+    public static final String PATIENT_REGISTER_CODE = "patientRegisterCode:";
+    public static final String PATIENT_FORGET_CODE = "patientForgetCode:";
+
+//    login
+    public static final String NOW_LOGGED_IN_TYPE = "nowLoggedInType";
+    public static final String NOW_LOGGED_IN_TYPE_DOCTOR = "nowLoggedInTypeDoctor";
+    public static final String NOW_LOGGED_IN_TYPE_PATIENT = "nowLoggedInTypePatient";
+    public static final String NOW_LOGGED_IN_TYPE_ADMIN = "nowLoggedInTypeAdmin";
+    public static final String NOW_LOGGED_IN_ID = "nowLoggedInId";
 }

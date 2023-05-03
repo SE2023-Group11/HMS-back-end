@@ -10,8 +10,8 @@ public interface InfoAdminDetailDao {
     @Select("SELECT * FROM info_admin_detail WHERE detail_id = #{detailId}")
     public InfoAdminDetail getById(Integer detailId);
 
-    @Insert("INSERT INTO info_admin_detail (detail_id,doctor_id, doctor_name, doctor_number, doctor_mail, doctor_phone, doctor_password, doctor_status, doctor_section,doctor_title,doctor_introduction, doctor_img)" +
-            "VALUES (#{detailID},#{doctorId}, #{doctorName}, #{doctorNumber}, #{doctorMail}, #{doctorPhone}, #{doctorPassword}, #{doctorStatus}, #{doctorSection}, #{doctorTitle}, #{doctorIntroduction}, #{doctorImg})" )
+    @Insert("INSERT INTO info_admin_detail (doctor_id, doctor_name, doctor_number, doctor_mail, doctor_phone, doctor_password, doctor_status, doctor_section,doctor_title,doctor_introduction, doctor_img)" +
+            "VALUES (#{doctorId}, #{doctorName}, #{doctorNumber}, #{doctorMail}, #{doctorPhone}, #{doctorPassword}, #{doctorStatus}, #{doctorSection}, #{doctorTitle}, #{doctorIntroduction}, #{doctorImg})" )
     @Options(useGeneratedKeys = true,keyProperty = "detailId")
     public void addInfo(InfoAdminDetail infoAdminDetail);
 

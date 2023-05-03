@@ -1,9 +1,12 @@
 package com.se.hmsbackend.controller;
 
+import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.InfoAdmin;
 import com.se.hmsbackend.pojo.InfoAdminDetail;
 import com.se.hmsbackend.service.InfoAdminService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,13 +33,17 @@ public class InfoAdminController {
     }
 
     @PostMapping("/acceptNotify")
-    public R<InfoAdmin> acceptInfo(@RequestParam Integer infoId){
+    public R<InfoAdmin> acceptInfo(@RequestParam Integer infoId, HttpServletRequest request){
+        HttpSession session = request.getSession();
+        if(!Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(session.getAttribute(Const.NOW_LOGGED_IN_TYPE)))return R.error("当前登录用户非管理员");
         InfoAdmin info = infoAdminService.acceptInfo(infoId);
         return R.success(info);
     }
 
     @PostMapping("/declineNotify")
-    public R<InfoAdmin> denyInfo(@RequestParam Integer infoId){
+    public R<InfoAdmin> denyInfo(@RequestParam Integer infoId, HttpServletRequest request){
+        HttpSession session = request.getSession();
+        if(!Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(session.getAttribute(Const.NOW_LOGGED_IN_TYPE)))return R.error("当前登录用户非管理员");
         InfoAdmin info = infoAdminService.denyInfo(infoId);
         return R.success(info);
     }
