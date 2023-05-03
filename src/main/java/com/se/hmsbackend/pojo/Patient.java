@@ -12,11 +12,12 @@ public class Patient {
     private boolean patientSex;
     private LocalDate patientBirthday;
     private String patientPassword;
+    private String patientImg;
 
     public Patient() {
     }
 
-    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDate patientBirthday, String patientPassword) {
+    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDate patientBirthday, String patientPassword, String patientImg) {
         this.patientId = patientId;
         this.patientName = patientName;
         this.patientNumber = patientNumber;
@@ -25,12 +26,13 @@ public class Patient {
         this.patientSex = patientSex;
         this.patientBirthday = patientBirthday;
         this.patientPassword = patientPassword;
+        this.patientImg = patientImg;
     }
 
     @Override
     public String toString() {
         return "Patient{" +
-                "patientId=" + patientId +
+                "patientId='" + patientId + '\'' +
                 ", patientName='" + patientName + '\'' +
                 ", patientNumber='" + patientNumber + '\'' +
                 ", patientMail='" + patientMail + '\'' +
@@ -38,7 +40,16 @@ public class Patient {
                 ", patientSex=" + patientSex +
                 ", patientBirthday=" + patientBirthday +
                 ", patientPassword='" + patientPassword + '\'' +
+                ", patientImg='" + patientImg + '\'' +
                 '}';
+    }
+
+    public String getPatientImg() {
+        return patientImg;
+    }
+
+    public void setPatientImg(String patientImg) {
+        this.patientImg = patientImg;
     }
 
     public String getPatientId() {

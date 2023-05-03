@@ -11,11 +11,12 @@ public class Doctor {
     private String doctorTitle;
     private boolean doctorStatus;
     private String doctorIntroduction;
+    private String doctorImg;
 
     public Doctor() {
     }
 
-    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus, String doctorIntroduction) {
+    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus, String doctorIntroduction, String doctorImg) {
         this.doctorId = doctorId;
         this.doctorName = doctorName;
         this.doctorNumber = doctorNumber;
@@ -26,6 +27,7 @@ public class Doctor {
         this.doctorTitle = doctorTitle;
         this.doctorStatus = doctorStatus;
         this.doctorIntroduction = doctorIntroduction;
+        this.doctorImg = doctorImg;
     }
 
     @Override
@@ -41,7 +43,16 @@ public class Doctor {
                 ", doctorTitle='" + doctorTitle + '\'' +
                 ", doctorStatus=" + doctorStatus +
                 ", doctorIntroduction='" + doctorIntroduction + '\'' +
+                ", doctorImg='" + doctorImg + '\'' +
                 '}';
+    }
+
+    public String getDoctorImg() {
+        return doctorImg;
+    }
+
+    public void setDoctorImg(String doctorImg) {
+        this.doctorImg = doctorImg;
     }
 
     public String getDoctorIntroduction() {

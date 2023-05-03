@@ -12,11 +12,12 @@ public class InfoAdminDetail {
     private String doctorTitle;
     private boolean doctorStatus;
     private String doctorIntroduction;
+    private String doctorImg;
 
     public InfoAdminDetail() {
     }
 
-    public InfoAdminDetail(Integer detailId, String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus, String doctorIntroduction) {
+    public InfoAdminDetail(Integer detailId, String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus, String doctorIntroduction, String doctorImg) {
         this.detailId = detailId;
         this.doctorId = doctorId;
         this.doctorName = doctorName;
@@ -28,6 +29,7 @@ public class InfoAdminDetail {
         this.doctorTitle = doctorTitle;
         this.doctorStatus = doctorStatus;
         this.doctorIntroduction = doctorIntroduction;
+        this.doctorImg = doctorImg;
     }
 
     @Override
@@ -44,7 +46,16 @@ public class InfoAdminDetail {
                 ", doctorTitle='" + doctorTitle + '\'' +
                 ", doctorStatus=" + doctorStatus +
                 ", doctorIntroduction='" + doctorIntroduction + '\'' +
+                ", doctorImg='" + doctorImg + '\'' +
                 '}';
+    }
+
+    public String getDoctorImg() {
+        return doctorImg;
+    }
+
+    public void setDoctorImg(String doctorImg) {
+        this.doctorImg = doctorImg;
     }
 
     public Integer getDetailId() {
