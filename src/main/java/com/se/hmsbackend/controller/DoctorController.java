@@ -124,4 +124,11 @@ public class DoctorController {
         infoAdminService.addInfo(Const.INFOADMIN_TYPE_UPDATE, doctor);
         return R.success("等待管理员审核中");
     }
+    @PostMapping("/logoutDoctor")
+    public R<String> logoutDoctor(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.removeAttribute(Const.NOW_LOGGED_IN_TYPE);
+        session.removeAttribute(Const.NOW_LOGGED_IN_ID);
+        return R.success("退出成功");
+    }
 }
