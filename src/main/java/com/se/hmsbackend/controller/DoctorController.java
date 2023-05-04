@@ -6,9 +6,11 @@ import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.dao.DoctorDao;
 import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.InfoDoctor;
+import com.se.hmsbackend.pojo.Order;
 import com.se.hmsbackend.service.DoctorService;
 import com.se.hmsbackend.service.InfoAdminService;
 import com.se.hmsbackend.service.InfoDoctorService;
+import com.se.hmsbackend.service.OrderService;
 import com.se.hmsbackend.utils.MailUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -28,6 +30,8 @@ public class DoctorController {
     private InfoAdminService infoAdminService;
     @Autowired
     private InfoDoctorService infoDoctorService;
+    @Autowired
+    private OrderService orderService;
 
     @PostMapping("/sendToEmail")
     public R<String> sendToEmail(@RequestParam Integer type, @RequestParam String name,@RequestParam String email, HttpSession session) {
@@ -49,7 +53,7 @@ public class DoctorController {
         if(!confirmPW.equals(doctor.getDoctorPassword()))return R.error("两次密码不一致");
         if(doctorService.hasNumber(doctor.getDoctorNumber()))return R.error("该身份证号已注册");
         if(doctorService.hasMail(doctor.getDoctorMail()))return R.error("邮箱已注册");
-//        更新医生的id
+//        生成医生的id
         doctor.setDoctorId(doctorService.getNewDoctorId());
 //        更新医生的状态为未验证
         doctor.setDoctorStatus(Const.DOCTOR_STATUS_UNVERIFIED);
@@ -81,27 +85,21 @@ public class DoctorController {
         if(doctor == null)return R.error("用户不存在");
         if(!password.equals(doctor.getDoctorPassword()))return R.error("密码错误");
 
-        request.getSession().setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_DOCTOR);
-        request.getSession().setAttribute(Const.NOW_LOGGED_IN_ID,doctor.getDoctorId());
-        return R.success("登录成功");
+        HttpSession session = request.getSession();
+        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_DOCTOR);
+        session.setAttribute(Const.NOW_LOGGED_IN_ID,doctor.getDoctorId());
+        session.setAttribute(Const.TOKEN, session.getId());
+        return R.success(session.getId());
     }
     @PostMapping("/getDoctorMessage")
     public R<List<InfoDoctor>> getDoctorMessage(HttpServletRequest request){
-        HttpSession session = request.getSession();
-        String nowLoggedInType = (String) session.getAttribute(Const.NOW_LOGGED_IN_TYPE);
-        String nowLoggedInId = (String) session.getAttribute(Const.NOW_LOGGED_IN_ID);
-        if(!nowLoggedInType.equals(Const.NOW_LOGGED_IN_TYPE_DOCTOR))return R.error("当前登录者不是医生");
-
+        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         List<InfoDoctor> infoDoctors = infoDoctorService.getInfoDoctor(nowLoggedInId);
         return R.success(infoDoctors);
     }
     @PostMapping("/changeDoctor")
     public R<String> changeNowLoggedDoctor(HttpServletRequest request, @RequestBody Doctor doctor){
-        HttpSession session = request.getSession();
-        String nowLoggedInType = (String) session.getAttribute(Const.NOW_LOGGED_IN_TYPE);
-        String nowLoggedInId = (String) session.getAttribute(Const.NOW_LOGGED_IN_ID);
-        if(!nowLoggedInType.equals(Const.NOW_LOGGED_IN_TYPE_DOCTOR))return R.error("当前登录者不是医生");
-
+        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         Doctor oldDoctor = doctorService.getDoctorById(nowLoggedInId);
         doctor.setDoctorId(nowLoggedInId);
         doctor.setDoctorPassword(oldDoctor.getDoctorPassword());
@@ -113,11 +111,7 @@ public class DoctorController {
     }
     @PostMapping("/saveIntroduction")
     public R<String> changeNowLoggedDoctorInfo(HttpServletRequest request, @RequestBody JSONObject json) {
-        HttpSession session = request.getSession();
-        String nowLoggedInType = (String) session.getAttribute(Const.NOW_LOGGED_IN_TYPE);
-        String nowLoggedInId = (String) session.getAttribute(Const.NOW_LOGGED_IN_ID);
-        if(!nowLoggedInType.equals(Const.NOW_LOGGED_IN_TYPE_DOCTOR))return R.error("当前登录者不是医生");
-
+        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String doctorIntroduction = json.getString("doctorIntroduction");
         Doctor doctor = doctorService.getDoctorById(nowLoggedInId);
         doctor.setDoctorIntroduction(doctorIntroduction);
@@ -127,8 +121,20 @@ public class DoctorController {
     @PostMapping("/logoutDoctor")
     public R<String> logoutDoctor(HttpServletRequest request){
         HttpSession session = request.getSession();
+        session.removeAttribute(Const.TOKEN);
         session.removeAttribute(Const.NOW_LOGGED_IN_TYPE);
         session.removeAttribute(Const.NOW_LOGGED_IN_ID);
         return R.success("退出成功");
     }
+    @GetMapping("/getDoctorInformation")
+    public R<Doctor> getDoctorInformation(HttpServletRequest request){
+        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        return R.success(doctorService.getDoctorById(nowLoggedInId));
+    }
+    @PostMapping("/getAppointmentList")
+    public R<List<Order>> getAppointmentList(HttpServletRequest request){
+        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        return R.success(orderService.getByDoctorId(nowLoggedInId));
+    }
+
 }

@@ -38,4 +38,11 @@ public class Const {
     public static final String NOW_LOGGED_IN_TYPE_PATIENT = "nowLoggedInTypePatient";
     public static final String NOW_LOGGED_IN_TYPE_ADMIN = "nowLoggedInTypeAdmin";
     public static final String NOW_LOGGED_IN_ID = "nowLoggedInId";
+    public static final String TOKEN = "token";
+
+//    Authority
+    public static final String NO_AUTHORITY = "noAuthority";
+    public static final String PATIENT_AUTHORITY = "patientAuthority";
+    public static final String DOCTOR_AUTHORITY = "doctorAuthority";
+    public static final String ADMIN_AUTHORITY = "adminAuthority";
 }

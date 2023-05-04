@@ -1,5 +1,6 @@
 package com.se.hmsbackend.dao;
 
+import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.Patient;
 import org.apache.ibatis.annotations.*;
 
@@ -12,7 +13,8 @@ public interface PatientDao {
 
     @Select("SELECT * FROM patient WHERE patient_number = #{patientNumber}")
     public Patient getByNumber(String patientNumber);
-
+    @Select("SELECT * FROM patient WHERE patient_mail = #{patientMail}")
+    public Patient getByMail(String patientMail);
     @Insert("INSERT INTO patient (patient_id, patient_name, patient_number, patient_mail, patient_phone, patient_sex, patient_birthday, patient_password, patient_img) " +
             "VALUES (#{patientId}, #{patientName}, #{patientNumber}, #{patientMail}, #{patientPhone}, #{patientSex},#{patientBirthday},#{patientPassword}, #{patientImg})")
     public void addPatient(Patient patient);
