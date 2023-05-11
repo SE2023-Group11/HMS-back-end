@@ -3,9 +3,10 @@ server:
 spring:
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql:///hms?serverTimezone=UTC
+#      url: jdbc:mysql:///hms?serverTimezone=UTC
+      url: jdbc:mysql://rm-cn-nwy37ob6e000nfno.rwlb.rds.aliyuncs.com:3306/hms?ServerTimezone=UTC
       username: root
-      password: 345210
+      password: Aa12345678
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

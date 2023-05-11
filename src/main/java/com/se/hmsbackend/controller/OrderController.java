@@ -32,5 +32,6 @@ public class OrderController {
     @PostMapping("/addAppointment")
     public R<String> addAppointment(HttpServletRequest request){
 //    TODO:
+        return R.error("test");
     }
 }

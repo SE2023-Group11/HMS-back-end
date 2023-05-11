@@ -10,6 +10,9 @@ public class SectionService {
     @Autowired
     private SectionDao sectionDao;
 
+    public Section getById(Integer id) {
+        return sectionDao.getById(id);
+    }
     public Section getRoomInfo(String roomName){
         return sectionDao.getBySecname(roomName);
     }

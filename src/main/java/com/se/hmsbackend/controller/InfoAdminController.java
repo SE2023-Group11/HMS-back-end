@@ -5,7 +5,10 @@ import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.InfoAdmin;
 import com.se.hmsbackend.pojo.InfoAdminDetail;
+import com.se.hmsbackend.pojo.Section;
 import com.se.hmsbackend.service.InfoAdminService;
+import com.se.hmsbackend.service.SectionService;
+import com.se.hmsbackend.utils.JsonUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,8 @@ import java.util.List;
 public class InfoAdminController {
     @Autowired
     private InfoAdminService infoAdminService;
+    @Autowired
+    private SectionService sectionService;
 
     @GetMapping("/getAllNotifications")
     public R<List<JSONObject>> getAllInfoAdmin(){
@@ -28,14 +33,17 @@ public class InfoAdminController {
         List<InfoAdmin> infoList = infoAdminService.getAllInfoAdmin();
         for(InfoAdmin info : infoList){
             InfoAdminDetail infoDetail = infoAdminService.getInfoDetailByID(info.getDetailId());
-            JSONObject infoObj = new JSONObject();
+            Section section = sectionService.getById(infoDetail.getDoctorSection());
+            JSONObject infoObj = new JSONObject(true);
             infoObj.put("infoType",info.getInfoType());
             infoObj.put("detailId",info.getDetailId());
             infoObj.put("name",infoDetail.getDoctorName());
-            infoObj.put("section",infoDetail.getDoctorSection());
+            infoObj.put("sectionFirName",section.getSectionFirname());
+            infoObj.put("sectionSecName",section.getSectionSecname());
             infoObj.put("time",info.getInfoTime());
             list.add(infoObj);
         }
+        list.sort(JsonUtil.orderByTime);
         return R.success(list);
     }
 

@@ -15,6 +15,7 @@ public class AuthorityUtil {
         "/patientChangepwd",
         "/loginPatient",
 
+        "/getRoomInfo",
         "/getDoctorsByRoom"
     };
     private static final String[] patientAuthority = new String[]{
@@ -36,6 +37,7 @@ public class AuthorityUtil {
     private static final String[] adminAuthority = new String[]{
         "/changeRoomInfo",
         "/changeDoctorInfo",
+        "/getDoctorInfo",
         "/getAllNotifications",
         "/getNotifyInfoByID",
         "/acceptNotify",

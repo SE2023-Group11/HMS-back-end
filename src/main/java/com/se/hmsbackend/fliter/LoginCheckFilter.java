@@ -32,7 +32,14 @@ public class LoginCheckFilter implements Filter {
             filterChain.doFilter(request,response);
             return;
         }
-
+//        有管理员权限，放行
+        if(Const.ADMIN_AUTHORITY.equals(authority)){
+            Object type = session.getAttribute(Const.NOW_LOGGED_IN_TYPE);
+            if(Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(type)){
+                filterChain.doFilter(request,response);
+                return;
+            }
+        }
         String token = request.getParameter(Const.TOKEN);
         Object tokenInSession = session.getAttribute(Const.TOKEN);
 //        token不一致,不放行
@@ -57,13 +64,6 @@ public class LoginCheckFilter implements Filter {
             }
         }
 
-        if(Const.ADMIN_AUTHORITY.equals(authority)){
-            Object type = session.getAttribute(Const.NOW_LOGGED_IN_TYPE);
-            if(Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(type)){
-                filterChain.doFilter(request,response);
-                return;
-            }
-        }
         response.getWriter().write(JSON.toJSONString(R.error("Access denied")));
     }
 }
