@@ -13,11 +13,11 @@ public interface InfoAdminDao {
     public List<InfoAdmin> getAllInfo();
     @Select("SELECT * FROM info_admin WHERE info_id = #{infoId}")
     public InfoAdmin getById(Integer infoId);
-    @Insert("INSERT INTO info_admin (detail_id, info_type, info_status) VALUES (#{detailId}, #{infoType}, #{infoStatus})")
+    @Insert("INSERT INTO info_admin (detail_id, info_type, info_time, info_status) VALUES (#{detailId}, #{infoType}, #{infoTime}, #{infoStatus})")
     @Options(useGeneratedKeys = true,keyProperty = "infoId")
     public void addInfo(InfoAdmin infoAdmin);
 
-    @Update("UPDATE info_admin SET detail_id = #{detailId}, info_type = #{infoType}, info_status = #{infoStatus} WHERE info_id = #{infoId}")
+    @Update("UPDATE info_admin SET detail_id = #{detailId}, info_type = #{infoType}, info_time = #{infoTime}, info_status = #{infoStatus} WHERE info_id = #{infoId}")
     public void updateInfo(InfoAdmin infoAdmin);
 
     @Delete("DELETE FROM info_admin WHERE info_id = #{infoId}")

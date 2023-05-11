@@ -1,20 +1,22 @@
 package com.se.hmsbackend.controller;
 
 import com.se.hmsbackend.common.R;
+import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.Section;
+import com.se.hmsbackend.service.DoctorService;
 import com.se.hmsbackend.service.SectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class SectionController {
     @Autowired
     private SectionService sectionService;
-
+    @Autowired
+    private DoctorService doctorService;
     @PostMapping("/getRoomInfo")
     public R<String> getRoomInfo(@RequestParam String roomName) {
         Section section = sectionService.getRoomInfo(roomName);
@@ -26,5 +28,13 @@ public class SectionController {
         Section section =sectionService.updateRoomInfo(roomName, roomInfo);
         if(section!=null)return R.success(section);
         return R.error("修改失败");
+    }
+
+    @GetMapping("/getDoctorsByRoom")
+    public R<List<Doctor>> getDoctorsByRoom(@RequestParam String roomName){
+        Section section = sectionService.getRoomInfo(roomName);
+        if(section==null)return R.error("科室不存在");
+        List<Doctor> list = doctorService.getDoctorBySectionId(section.getSectionId());
+        return R.success(list);
     }
 }

@@ -20,6 +20,8 @@ public interface DoctorDao {
     @Select("SELECT * FROM doctor WHERE doctor_name = #{doctorName}")
     public List<Doctor> getByName(String doctorName);
 
+    @Select("SELECT * FROM doctor WHERE doctor_section = #{sectionId}")
+    public List<Doctor> getBySectionId(Integer sectionId);
     @Insert("INSERT INTO doctor (doctor_id, doctor_name, doctor_number, doctor_mail, doctor_phone, doctor_password, doctor_status, doctor_section,doctor_title,doctor_introduction,doctor_img)" +
             "VALUES (#{doctorId}, #{doctorName}, #{doctorNumber}, #{doctorMail}, #{doctorPhone}, #{doctorPassword}, #{doctorStatus}, #{doctorSection}, #{doctorTitle}, #{doctorIntroduction}, #{doctorImg})" )
     public void addDoctor(Doctor doctor);

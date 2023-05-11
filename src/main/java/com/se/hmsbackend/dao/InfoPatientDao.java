@@ -14,11 +14,11 @@ public interface InfoPatientDao {
     @Select("SELECT * FROM info_patient WHERE patient_id = #{patientId}")
     public List<InfoPatient> getByPatientId(String patientId);
 
-    @Insert("INSERT INTO info_patient (patient_id, info_body) VALUES (#{patientId}, #{infoBody})")
+    @Insert("INSERT INTO info_patient (patient_id, info_time, info_body) VALUES (#{patientId}, #{info_time}, #{infoBody})")
     @Options(useGeneratedKeys = true,keyProperty = "infoId")
     public void addInfo(InfoPatient infoPatient);
 
-    @Update("UPDATE info_patient SET patient_id = #{patientId}, info_body = #{infoBody} WHERE info_id = #{infoId}")
+    @Update("UPDATE info_patient SET patient_id = #{patientId}, info_time = #{infoTime}, info_body = #{infoBody} WHERE info_id = #{infoId}")
     public void updateInfo(InfoPatient infoPatient);
 
     @Delete("DELETE FROM info_patient WHERE info_id = #{infoId}")

@@ -4,16 +4,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.dao.DoctorDao;
+import com.se.hmsbackend.pojo.Admin;
 import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.InfoDoctor;
 import com.se.hmsbackend.pojo.Order;
-import com.se.hmsbackend.service.DoctorService;
-import com.se.hmsbackend.service.InfoAdminService;
-import com.se.hmsbackend.service.InfoDoctorService;
-import com.se.hmsbackend.service.OrderService;
+import com.se.hmsbackend.service.*;
 import com.se.hmsbackend.utils.MailUtil;
+import com.se.hmsbackend.utils.StringUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +32,8 @@ public class DoctorController {
     private InfoDoctorService infoDoctorService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private AdminService adminService;
 
     @PostMapping("/sendToEmail")
     public R<String> sendToEmail(@RequestParam Integer type, @RequestParam String name,@RequestParam String email, HttpSession session) {
@@ -80,6 +82,17 @@ public class DoctorController {
 
     @PostMapping("/loginDoctor")
     public R<String> loginDoctor(@RequestParam String uid, @RequestParam String password, HttpServletRequest request){
+        if(StringUtil.isNumber(uid)){
+            Admin admin = adminService.getAdminById(Integer.valueOf(uid));
+            if(admin == null)return R.error("用户不存在");
+            if(!password.equals(admin.getAdminPassword()))return R.error("密码错误");
+            HttpSession session = request.getSession();
+            session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_ADMIN);
+            session.setAttribute(Const.NOW_LOGGED_IN_ID,admin.getAdminId());
+            session.setAttribute(Const.TOKEN, session.getId());
+            return R.success(session.getId());
+        }
+
         Doctor doctor = doctorService.getDoctorById(uid);
         if(doctor == null)doctor = doctorService.getDoctorByNumber(uid);
         if(doctor == null)return R.error("用户不存在");
@@ -131,10 +144,4 @@ public class DoctorController {
         String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         return R.success(doctorService.getDoctorById(nowLoggedInId));
     }
-    @PostMapping("/getAppointmentList")
-    public R<List<Order>> getAppointmentList(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
-        return R.success(orderService.getByDoctorId(nowLoggedInId));
-    }
-
 }

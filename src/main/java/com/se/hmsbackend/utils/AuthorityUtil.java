@@ -13,12 +13,16 @@ public class AuthorityUtil {
 
         "/patientRegister",
         "/patientChangepwd",
-        "/loginPatient"
+        "/loginPatient",
+
+        "/getDoctorsByRoom"
     };
     private static final String[] patientAuthority = new String[]{
         "/getPatientMessage",
         "/changePatient",
-        "/getPatientInformation"
+        "/getPatientInformation",
+        "/getPatientAppointment",
+        "/addAppointment"
     };
     private static final String[] doctorAuthority = new String[]{
         "/getDoctorMessage",

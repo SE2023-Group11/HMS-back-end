@@ -20,6 +20,10 @@ public class LoginCheckFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
 
+        //测试，直接放行
+//        filterChain.doFilter(request,response);
+//        if(true)return;
+
         String requestURI =request.getRequestURI();
         String authority = AuthorityUtil.getAuthority(requestURI);
         System.out.println("拦截："+requestURI);

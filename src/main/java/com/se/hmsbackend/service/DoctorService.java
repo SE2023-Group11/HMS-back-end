@@ -25,6 +25,9 @@ public class DoctorService {
     public Doctor getDoctorByMail(String mail){
         return doctorDao.getByMail(mail);
     }
+    public List<Doctor> getDoctorBySectionId(Integer sectionId){
+        return doctorDao.getBySectionId(sectionId);
+    }
     public boolean updateDoctor(Doctor doctor){
         doctorDao.updateDoctor(doctor);
         return true;

@@ -1,5 +1,6 @@
 package com.se.hmsbackend.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.InfoAdmin;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,9 +23,20 @@ public class InfoAdminController {
     private InfoAdminService infoAdminService;
 
     @GetMapping("/getAllNotifications")
-    public R<List<InfoAdmin>> getAllInfoAdmin(){
+    public R<List<JSONObject>> getAllInfoAdmin(){
+        List<JSONObject> list = new ArrayList<JSONObject>();
         List<InfoAdmin> infoList = infoAdminService.getAllInfoAdmin();
-        return R.success(infoList);
+        for(InfoAdmin info : infoList){
+            InfoAdminDetail infoDetail = infoAdminService.getInfoDetailByID(info.getDetailId());
+            JSONObject infoObj = new JSONObject();
+            infoObj.put("infoType",info.getInfoType());
+            infoObj.put("detailId",info.getDetailId());
+            infoObj.put("name",infoDetail.getDoctorName());
+            infoObj.put("section",infoDetail.getDoctorSection());
+            infoObj.put("time",info.getInfoTime());
+            list.add(infoObj);
+        }
+        return R.success(list);
     }
 
     @PostMapping("/getNotifyInfoByID")

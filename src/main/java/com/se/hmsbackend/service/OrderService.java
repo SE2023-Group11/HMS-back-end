@@ -15,4 +15,7 @@ public class OrderService {
     public List<Order> getByDoctorId(String doctorId) {
         return orderDao.getByDoctorId(doctorId);
     }
+    public List<Order> getByPatientId(String patientId) {
+        return orderDao.getByPatientId(patientId);
+    }
 }

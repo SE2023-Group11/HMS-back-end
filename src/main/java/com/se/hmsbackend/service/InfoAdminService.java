@@ -11,6 +11,7 @@ import com.se.hmsbackend.utils.TransferUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +26,7 @@ public class InfoAdminService {
 
     public List<InfoAdmin> getAllInfoAdmin(){
         List<InfoAdmin> infoAdminList = infoAdminDao.getAllInfo();
-        for(InfoAdmin infoAdmin : infoAdminList){
-            if(!Const.INFOADMIN_STATUS_WAITING.equals(infoAdmin.getInfoStatus())){
-                infoAdminList.remove(infoAdmin);
-            }
-        }
+        infoAdminList.removeIf(infoAdmin -> !Const.INFOADMIN_STATUS_WAITING.equals(infoAdmin.getInfoStatus()));
         return infoAdminList;
     }
 
@@ -68,6 +65,7 @@ public class InfoAdminService {
         InfoAdmin infoAdmin = new InfoAdmin();
         infoAdmin.setDetailId(infoAdminDetail.getDetailId());
         infoAdmin.setInfoType(type);
+        infoAdmin.setInfoTime(LocalDateTime.now());
         infoAdmin.setInfoStatus(Const.INFOADMIN_STATUS_WAITING);
         infoAdminDao.addInfo(infoAdmin);
     }
