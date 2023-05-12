@@ -15,6 +15,7 @@ public class Const {
     public static final Integer SCHEDULE_STATUS_REST =  1;//未排班
     public static final Integer SCHEDULE_STATUS_EMPTY = 2;//有排班但无预约
     public static final Integer SCHEDULE_STATUS_WORK = 3;//有排班有预约
+    public static final String SCHEDULE_DEFAULT = "[2,2,2,2,2,2,2,2,2,2,2,2,2]";
 //    InfoAdmin
     public static final Integer INFOADMIN_TYPE_REGISTER = 1;//审核医生账号注册
     public static final Integer INFOADMIN_TYPE_UPDATE = 2;//审核医生信息修改

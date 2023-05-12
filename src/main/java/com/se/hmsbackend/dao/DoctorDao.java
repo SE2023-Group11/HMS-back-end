@@ -9,6 +9,9 @@ import java.util.List;
 public interface DoctorDao {
     @Select("SELECT COUNT(*) FROM doctor")
     public Integer getNum();
+
+    @Select("SELECT * FROM doctor")
+    public List<Doctor> getAllDoctor();
     @Select("SELECT * FROM doctor WHERE doctor_id = #{doctorId}")
     public Doctor getById(String doctorId);
 

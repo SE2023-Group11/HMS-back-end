@@ -16,6 +16,9 @@ public class DoctorService {
     public List<Doctor> getDoctorInfo(String doctorName){
         return doctorDao.getByName(doctorName);
     }
+    public List<Doctor> getAllDoctor(){
+        return doctorDao.getAllDoctor();
+    }
     public Doctor getDoctorById(String doctorId){
         return doctorDao.getById(doctorId);
     }
