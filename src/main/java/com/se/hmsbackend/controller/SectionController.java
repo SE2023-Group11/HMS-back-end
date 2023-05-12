@@ -37,4 +37,10 @@ public class SectionController {
         List<Doctor> list = doctorService.getDoctorBySectionId(section.getSectionId());
         return R.success(list);
     }
+
+    @GetMapping("/getRoomName")
+    public R<List<Section>> getAllSection(){
+        List<Section> list = sectionService.getAllSections();
+        return R.success(list);
+    }
 }

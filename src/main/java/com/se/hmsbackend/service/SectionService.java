@@ -5,6 +5,8 @@ import com.se.hmsbackend.pojo.Section;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SectionService {
     @Autowired
@@ -22,5 +24,8 @@ public class SectionService {
         section.setSectionIntroduction(roomInfo);
         sectionDao.updateSection(section);
         return section;
+    }
+    public List<Section> getAllSections(){
+        return sectionDao.getAllSections();
     }
 }

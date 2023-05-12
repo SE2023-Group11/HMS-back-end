@@ -13,4 +13,7 @@ public class ScheduleService {
     public void addSchedule(Schedule schedule){
         scheduleDao.addSchedule(schedule);
     }
+    public Schedule getScheduleByDoctorId(String doctorId){
+        return scheduleDao.getByDoctorId(doctorId);
+    }
 }
