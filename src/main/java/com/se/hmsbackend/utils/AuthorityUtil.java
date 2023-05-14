@@ -28,7 +28,8 @@ public class AuthorityUtil {
         "/changePatient",
         "/getPatientInformation",
         "/getPatientAppointment",
-        "/addAppointment"
+        "/addAppointment",
+        "/deleteAppointment"
     };
     private static final String[] doctorAuthority = new String[]{
         "/getDoctorMessage",
@@ -37,7 +38,8 @@ public class AuthorityUtil {
         "/logoutDoctor",
         "/getDoctorInformation",
         "/getAppointmentList",
-        "/getSchedule"
+        "/getSchedule",
+        "/ChangeAppointmentStatus"
     };
     private static final String[] adminAuthority = new String[]{
         "/changeRoomInfo",

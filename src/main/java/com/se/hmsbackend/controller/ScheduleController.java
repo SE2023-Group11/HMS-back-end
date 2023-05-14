@@ -31,7 +31,6 @@ public class ScheduleController {
 
     @GetMapping("/getDoctorsBySchedule")
     public R<List<Doctor>> getDoctorsBySchedule(@RequestParam String roomName, @RequestParam String date){
-//        TODO: 查询科室当日排班医生
         Section section = sectionService.getRoomInfo(roomName);
         List<Doctor> doctors = doctorService.getDoctorBySectionId(section.getSectionId());
         doctors.removeIf(doctor -> ScheduleUtil.isFullSchedule(
