@@ -6,6 +6,7 @@ import com.se.hmsbackend.pojo.Order;
 import com.se.hmsbackend.utils.ScheduleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,6 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
+@Transactional
 public class OrderService {
     @Autowired
     private OrderDao orderDao;

@@ -7,8 +7,10 @@ import com.se.hmsbackend.service.OrderService;
 import com.se.hmsbackend.service.ScheduleService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.beans.Transient;
 import java.util.List;
 
 @RestController
@@ -30,6 +32,7 @@ public class OrderController {
         return R.success(orderService.getByPatientId(nowLoggedInId));
     }
 
+    @Transactional
     @PostMapping("/addAppointment")
     public R<String> addAppointment(HttpServletRequest request, @RequestParam String doctorId, @RequestParam String day, @RequestParam Integer time){
         String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
@@ -39,6 +42,7 @@ public class OrderController {
         }
         return R.error("预约失败");
     }
+    @Transactional
     @DeleteMapping("/deleteAppointment")
     public R<String> deleteAppointment(HttpServletRequest request, @RequestParam Integer orderId){
         Order order = orderService.getByOrderId(orderId);
@@ -48,7 +52,7 @@ public class OrderController {
         }
         return R.error("操作失败");
     }
-
+    @Transactional
     @PostMapping("/ChangeAppointmentStatus")
     public R<String> changeAppointmentStatus(HttpServletRequest request, @RequestParam Integer orderId){
         Order order = orderService.getByOrderId(orderId);

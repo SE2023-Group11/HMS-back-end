@@ -5,8 +5,10 @@ import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class PatientService {
     @Autowired
     private PatientDao patientDao;

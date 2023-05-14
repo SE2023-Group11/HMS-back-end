@@ -6,12 +6,14 @@ import com.se.hmsbackend.pojo.Schedule;
 import com.se.hmsbackend.utils.ScheduleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Service
+@Transactional
 public class ScheduleService {
     @Autowired
     private ScheduleDao scheduleDao;
