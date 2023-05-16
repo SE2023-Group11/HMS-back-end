@@ -6,9 +6,11 @@ import com.se.hmsbackend.exception.SystemException;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @Slf4j
+@CrossOrigin
 @ControllerAdvice
 public class GlobalExceptionController {
     @ExceptionHandler(Exception.class)

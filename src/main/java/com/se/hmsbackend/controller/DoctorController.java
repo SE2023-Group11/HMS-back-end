@@ -22,6 +22,7 @@ import java.net.http.HttpRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class DoctorController {
     @Autowired

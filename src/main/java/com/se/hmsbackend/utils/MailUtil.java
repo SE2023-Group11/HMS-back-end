@@ -1,5 +1,7 @@
 package com.se.hmsbackend.utils;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -8,9 +10,11 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
+@Slf4j
 public class MailUtil {
     public static String myEmailAccount = "board_checkcode@126.com";
     public static String myEmailPassword = "HMUGRDPERXPOCJDH";
+//    TdBuBrUwfbiw4Tu
     public static String myEmailSMTPHost = "smtp.126.com";
 
     public static String receiveMailAccount = "";
@@ -52,7 +56,7 @@ public class MailUtil {
             transport.close();
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage(), e);
             return false;
         }
     }

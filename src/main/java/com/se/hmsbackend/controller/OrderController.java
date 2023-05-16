@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.beans.Transient;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class OrderController {
     @Autowired
