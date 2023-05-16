@@ -1,0 +1,5 @@
+2023-05-16T10:55:15.398+08:00  INFO 22448 --- [main] c.s.h.HmsBackEndApplicationTests         : Starting HmsBackEndApplicationTests using Java 17.0.3.1 with PID 22448 (started by AlpaCa in D:\items\SE\HMS\HMS-back-end)
+2023-05-16T10:55:15.401+08:00  INFO 22448 --- [main] c.s.h.HmsBackEndApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2023-05-16T10:55:18.980+08:00  INFO 22448 --- [main] c.s.h.HmsBackEndApplicationTests         : Started HmsBackEndApplicationTests in 4.308 seconds (process running for 7.256)
+2023-05-16T10:55:19.977+08:00  INFO 22448 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.ScheduleUtilTest]: ScheduleUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-16T10:55:20.002+08:00  INFO 22448 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.ScheduleUtilTest

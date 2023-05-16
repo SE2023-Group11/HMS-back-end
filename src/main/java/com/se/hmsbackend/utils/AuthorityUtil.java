@@ -21,7 +21,8 @@ public class AuthorityUtil {
 //            TODO: 返回值带有密码等信息，可能需要修改
         "/getDoctorsBySchedule",
         "/getDoctorSchedule",
-        "/getRoomName"
+        "/getRoomName",
+        "/getPatientName"
     };
     private static final String[] patientAuthority = new String[]{
         "/getPatientMessage",

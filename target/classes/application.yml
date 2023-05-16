@@ -10,3 +10,11 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.log4jdemo.demo4j.Demo4jApplicationTests: error
+  pattern:
+    console: "%d - %msg %n"
+  file:
+    path: ./log

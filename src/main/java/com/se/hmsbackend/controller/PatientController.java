@@ -86,4 +86,9 @@ public class PatientController {
         return R.success(patientService.getPatientById(nowLoggedInId));
     }
 
+    @PostMapping("/getPatientName")
+    public R<String> getPatientName(@RequestParam String patientId){
+        Patient patient = patientService.getPatientById(patientId);
+        return R.success(patient.getPatientName());
+    }
 }
