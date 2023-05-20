@@ -87,7 +87,7 @@ public class DoctorController {
             session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_ADMIN);
             session.setAttribute(Const.NOW_LOGGED_IN_ID,admin.getAdminId());
             session.setAttribute(Const.TOKEN, session.getId());
-            return R.success(session.getId());
+            return R.successAdmin(session.getId());
         }
 
         Doctor doctor = doctorService.getDoctorById(uid);

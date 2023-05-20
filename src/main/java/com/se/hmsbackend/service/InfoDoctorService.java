@@ -16,4 +16,8 @@ public class InfoDoctorService {
     public List<InfoDoctor> getInfoDoctor(String doctorId){
         return infoDoctorDao.getByDoctorId(doctorId);
     }
+    public boolean sendInfoToDoctor(InfoDoctor infoDoctor){
+        infoDoctorDao.addInfo(infoDoctor);
+        return true;
+    }
 }

@@ -12,7 +12,7 @@ import java.util.Map;
 @Data
 public class R<T> {
 
-    private Integer code; //编码：1成功，0和其它数字为失败
+    private Integer code; //编码：1成功，0和其它数字为失败, 2为管理员登陆成功
 
     private String msg; //错误信息
 
@@ -24,6 +24,13 @@ public class R<T> {
         R<T> r = new R<T>();
         r.data = object;
         r.code = 1;
+        return r;
+    }
+
+    public static <T> R<T> successAdmin(T object) {
+        R<T> r = new R<T>();
+        r.data = object;
+        r.code = 2;
         return r;
     }
 
