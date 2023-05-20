@@ -2,6 +2,7 @@ package com.se.hmsbackend.service;
 
 import com.se.hmsbackend.dao.InfoPatientDao;
 import com.se.hmsbackend.pojo.InfoPatient;
+import com.se.hmsbackend.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +17,9 @@ public class InfoPatientService {
     private InfoPatientDao infoPatientDao;
 
     public List<InfoPatient> getInfoPatient(String patientId){
-        return infoPatientDao.getByPatientId(patientId);
+        List<InfoPatient> res = infoPatientDao.getByPatientId(patientId);
+        res.sort(JsonUtil.orderInfoPatientByTime);
+        return res;
     }
 
     public boolean sendInfoToPatient(InfoPatient info){

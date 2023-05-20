@@ -13,6 +13,10 @@ public class AdminService {
     private AdminDao adminDao;
 
     public Admin getAdminById(Integer id){
-        return adminDao.getById(id);
+        try {
+            return adminDao.getById(id);
+        }catch (Exception e){
+            return null;
+        }
     }
 }

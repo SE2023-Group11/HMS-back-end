@@ -79,9 +79,11 @@ public class DoctorController {
 
     @PostMapping("/loginDoctor")
     public R<String> loginDoctor(@RequestParam String uid, @RequestParam String password, HttpServletRequest request){
-        if(StringUtil.isNumber(uid)){
-            Admin admin = adminService.getAdminById(Integer.valueOf(uid));
-            if(admin == null)return R.error("用户不存在");
+        Admin admin = null;
+        try{
+            admin = adminService.getAdminById(Integer.valueOf(uid));
+        }catch (Exception ignored){}
+        if(admin != null){
             if(!password.equals(admin.getAdminPassword()))return R.error("密码错误");
             HttpSession session = request.getSession();
             session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_ADMIN);

@@ -18,3 +18,10 @@
 2023-05-20T15:08:07.663+08:00  INFO 9147 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2023-05-20T15:08:50.860+08:00  INFO 9147 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-05-20T15:08:50.869+08:00  INFO 9147 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-20T19:33:14.496+08:00  INFO 6947 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 6947 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-20T19:33:14.498+08:00  INFO 6947 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
+2023-05-20T19:33:15.824+08:00  INFO 6947 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.602 seconds (process running for 2.33)
+2023-05-20T19:33:16.185+08:00  INFO 6947 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-20T19:33:16.187+08:00  INFO 6947 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
+2023-05-20T19:33:16.196+08:00  INFO 6947 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-20T19:33:16.205+08:00  INFO 6947 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests

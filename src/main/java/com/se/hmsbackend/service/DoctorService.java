@@ -22,10 +22,18 @@ public class DoctorService {
         return doctorDao.getAllDoctor();
     }
     public Doctor getDoctorById(String doctorId){
-        return doctorDao.getById(doctorId);
+        try {
+            return doctorDao.getById(doctorId);
+        }catch (Exception e){
+            return null;
+        }
     }
     public Doctor getDoctorByNumber(String number){
-        return doctorDao.getByNumber(number);
+        try {
+            return doctorDao.getByNumber(number);
+        }catch (Exception e){
+            return null;
+        }
     }
     public Doctor getDoctorByMail(String mail){
         return doctorDao.getByMail(mail);

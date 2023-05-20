@@ -9,9 +9,11 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
+@Slf4j
 @WebFilter(filterName = "loginCheckFilter",urlPatterns = "/*")
 public class LoginCheckFilter implements Filter {
     @Override
@@ -26,7 +28,8 @@ public class LoginCheckFilter implements Filter {
 
         String requestURI =request.getRequestURI();
         String authority = AuthorityUtil.getAuthority(requestURI);
-        System.out.println("拦截："+requestURI);
+//        System.out.println("拦截："+requestURI);
+        log.info("拦截： "+requestURI);
 //        不需要权限，放行
         if(Const.NO_AUTHORITY.equals(authority)){
             filterChain.doFilter(request,response);
