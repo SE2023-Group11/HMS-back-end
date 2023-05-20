@@ -5,6 +5,8 @@ import com.se.hmsbackend.dao.OrderDao;
 import com.se.hmsbackend.pojo.Order;
 import com.se.hmsbackend.utils.ScheduleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +21,7 @@ public class OrderService {
     @Autowired
     private OrderDao orderDao;
 
+    public List<Order> getAllOrders(){return orderDao.getAllOrders();}
     public Order getByOrderId(Integer orderId) {
         return orderDao.getByOrderId(orderId);
     }
@@ -54,5 +57,18 @@ public class OrderService {
         order.setOrderStatus(newStatus);
         orderDao.updateOrder(order);
         return true;
+    }
+
+    @Async
+    @Scheduled(cron = "0 0 4 * * ? *")
+    public void orderBroken(){
+        LocalDate day = LocalDate.now();
+        day = day.minusDays(1);
+        List<Order> orders = getAllOrders();
+        for(Order order : orders){
+            if(day.equals(order.getDay()) && Const.ORDER_STATUS_WAITING.equals(order.getOrderStatus())){
+                updateOrderStatus(order.getOrderId(), Const.ORDER_STATUS_BROKEN);
+            }
+        }
     }
 }

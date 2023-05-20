@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.beans.Transient;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -63,6 +64,11 @@ public class OrderController {
     @DeleteMapping("/deleteAppointment")
     public R<String> deleteAppointment(HttpServletRequest request, @RequestParam Integer orderId){
         Order order = orderService.getByOrderId(orderId);
+//        判断是否是在一天前取消预约
+        LocalDate nowDay = LocalDate.now();
+        LocalDate ordDay = order.getDay();
+        if(!nowDay.isBefore(ordDay))return R.error("必须在约定时间一天前取消预约");
+//        取消预约
         String patientId = order.getPatientId();
         String doctorId = order.getDoctorId();
         if(orderService.deleteOrder(orderId)){

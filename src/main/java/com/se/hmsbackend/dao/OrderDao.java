@@ -8,6 +8,9 @@ import java.util.List;
 
 @Mapper
 public interface OrderDao {
+    @Select("SELECT * FROM `order`")
+    public List<Order> getAllOrders();
+
     @Select("SELECT * FROM `order` WHERE order_id = #{orderId}")
     public Order getByOrderId(Integer orderId);
 

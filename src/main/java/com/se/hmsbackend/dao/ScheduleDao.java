@@ -9,6 +9,9 @@ import java.util.List;
 
 @Mapper
 public interface ScheduleDao {
+    @Select("SELECT * FROM schedule")
+    public List<Schedule> getAllSchedules();
+
     @Select("SELECT * FROM schedule WHERE schedule_id = #{scheduleId}")
     public Schedule getById(Integer scheduleId);
 
