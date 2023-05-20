@@ -88,4 +88,45 @@ public class InfoUtil {
         infoDoctor.setInfoBody(infoBody);
         return infoDoctor;
     }
+    public static InfoPatient getInfoPatientOnOrderStart(String patientId){
+        InfoPatient infoPatient = new InfoPatient();
+        infoPatient.setPatientId(patientId);
+        infoPatient.setInfoTime(LocalDateTime.now());
+        String infoBody = "尊敬的患者，\n" +
+                "\n" +
+                "您好！您的一份预约即将到达就诊时间，请您提前安排好行程，按时前往就诊。\n" +
+                "\n" +
+                "请您注意以下几点：\n" +
+                "\n" +
+                "   1. 如果您不能按时前往，请提前至少1天联系医院/诊所取消预约，以免浪费医疗资源。\n" +
+                "\n" +
+                "   2. 在前往医院/诊所的路上，务必注意交通安全，确保安全到达。\n" +
+                "\n" +
+                "   3. 如果您有任何疑问或需要帮助，请随时联系我们的客服人员。\n" +
+                "\n" +
+                "祝您身体健康！\n" +
+                "\n";
+        infoPatient.setInfoBody(infoBody);
+        return infoPatient;
+    }
+    public static InfoDoctor getInfoDoctorOnOrderStart(String doctorId){
+        InfoDoctor infoDoctor = new InfoDoctor();
+        infoDoctor.setDoctorId(doctorId);
+        infoDoctor.setInfoTime(LocalDateTime.now());
+        String infoBody = "尊敬的医生，\n" +
+                "\n" +
+                "您好！您有一位患者即将到预约就诊时间,请您准备好相关的医疗设备和资料，做好就诊前的准备工作。\n" +
+                "\n" +
+                "请您注意以下几点：\n" +
+                "\n" +
+                "   1. 在就诊前，请认真查看该患者的病历资料和预约信息，了解患者的病情和预约目的。\n" +
+                "\n" +
+                "   2. 在就诊时，认真倾听患者的诉求和病情描述，进行细致的体检和检查，提供科学、专业的医疗服务。\n" +
+                "\n" +
+                "   3. 在就诊过程中，注意保护患者隐私，确保患者的医疗信息不被泄露。\n" +
+                "\n" +
+                "祝您工作顺利！";
+        infoDoctor.setInfoBody(infoBody);
+        return infoDoctor;
+    }
 }
