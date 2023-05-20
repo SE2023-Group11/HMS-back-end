@@ -55,10 +55,14 @@
             <artifactId>lombok</artifactId>
         </dependency>
 		<!--javaMail依赖-->
+<!--		<dependency>-->
+<!--			<groupId>javax.mail</groupId>-->
+<!--			<artifactId>mail</artifactId>-->
+<!--			<version>1.4.7</version>-->
+<!--		</dependency>-->
 		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.4</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 		<!--Fastjson依赖-->
 		<dependency>

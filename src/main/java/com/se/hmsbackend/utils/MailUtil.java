@@ -1,22 +1,27 @@
 package com.se.hmsbackend.utils;
 
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
 @Slf4j
 public class MailUtil {
-    public static String myEmailAccount = "board_checkcode@126.com";
-    public static String myEmailPassword = "HMUGRDPERXPOCJDH";
-//    TdBuBrUwfbiw4Tu
-    public static String myEmailSMTPHost = "smtp.126.com";
+//    public static String myEmailAccount = "board_checkcode@126.com";
+//    public static String myEmailPassword = "HMUGRDPERXPOCJDH";//授权密码1
+//    授权密码2：LXSYZIWVTHVTZIQK
+//    邮箱密码： TdBuBrUwfbiw4Tu
+//    163授权密码： HHCOSUKAWRSNRJZT
+//    public static String myEmailSMTPHost = "smtp.126.com";
 
+    public static String myEmailAccount = "EmailUtil2023@163.com";
+    public static String myEmailPassword = "HHCOSUKAWRSNRJZT";
+    public static String myEmailSMTPHost = "smtp.163.com";
     public static String receiveMailAccount = "";
 
     public static String getCheckCode(){
@@ -37,6 +42,12 @@ public class MailUtil {
             props.setProperty("mail.transport.protocol", "smtp");   //使用的协议（JavaMail规范要求）
             props.setProperty("mail.smtp.host", myEmailSMTPHost);   //发件人的邮箱的 SMTP 服务器地址
             props.setProperty("mail.smtp.auth", "true");            //需要请求认证
+
+            props.put("mail.smtp.ssl.enable", true);
+            props.setProperty("mail.smtp.port", "465");//设置端口
+            props.setProperty("mail.smtp.socketFactory.port", "465");//设置ssl端口
+            props.setProperty("mail.smtp.socketFactory.fallback", "false");
+            props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
             //2.根据配置创建会话对象, 用于和邮件服务器交互
             Session session = Session.getInstance(props);
@@ -87,5 +98,4 @@ public class MailUtil {
         message.saveChanges();
         return message;
     }
-
 }

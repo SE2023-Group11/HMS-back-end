@@ -24,6 +24,7 @@ com\se\hmsbackend\dao\InfoPatientDao.class
 com\se\hmsbackend\pojo\Patient.class
 com\se\hmsbackend\service\ScheduleService.class
 com\se\hmsbackend\dao\PatientDao.class
+com\se\hmsbackend\utils\MailService.class
 com\se\hmsbackend\dao\DoctorDao.class
 com\se\hmsbackend\controller\SectionController.class
 com\se\hmsbackend\service\InfoPatientService.class

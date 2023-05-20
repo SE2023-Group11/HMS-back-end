@@ -32,6 +32,7 @@ D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\pojo\Order.java
 D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\dao\SectionDao.java
 D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\exception\BusinessException.java
 D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\controller\InfoAdminController.java
+D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\utils\MailService.java
 D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\pojo\InfoAdmin.java
 D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\utils\AuthorityUtil.java
 D:\items\SE\HMS\HMS-back-end\src\main\java\com\se\hmsbackend\dao\OrderDao.java

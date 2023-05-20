@@ -3,23 +3,17 @@ package com.se.hmsbackend.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
-import com.se.hmsbackend.dao.DoctorDao;
 import com.se.hmsbackend.pojo.Admin;
 import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.InfoDoctor;
-import com.se.hmsbackend.pojo.Order;
 import com.se.hmsbackend.service.*;
-import com.se.hmsbackend.utils.MailUtil;
+import com.se.hmsbackend.service.MailService;
 import com.se.hmsbackend.utils.StringUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.Doc;
-import java.net.http.HttpRequest;
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -35,15 +29,17 @@ public class DoctorController {
     private OrderService orderService;
     @Autowired
     private AdminService adminService;
+    @Autowired
+    private MailService mailService;
 
     @PostMapping("/sendToEmail")
     public R<String> sendToEmail(@RequestParam Integer type, @RequestParam String name,@RequestParam String email, HttpSession session) {
-        String code = MailUtil.getCheckCode();
+        String code = mailService.getCheckCode();
         if(type.equals(Const.CODE_TYPE_DOCTOR_REGISTER))session.setAttribute(Const.DOCTOR_REGISTER_CODE+email,code);
         if(type.equals(Const.CODE_TYPE_DOCTOR_FORGET))session.setAttribute(Const.DOCTOR_FORGET_CODE+email,code);
         if(type.equals(Const.CODE_TYPE_PATIENT_REGISTER))session.setAttribute(Const.PATIENT_REGISTER_CODE+email,code);
         if(type.equals(Const.CODE_TYPE_PATIENT_FORGET))session.setAttribute(Const.PATIENT_FORGET_CODE+email,code);
-        MailUtil.sendMail(name,email,code);
+        mailService.sendMail(name,email,code);
         return R.success("验证码邮件发送成功");
     }
 
