@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.Admin;
+import com.se.hmsbackend.pojo.CheckCode;
 import com.se.hmsbackend.pojo.Doctor;
 import com.se.hmsbackend.pojo.InfoDoctor;
 import com.se.hmsbackend.service.*;
@@ -11,11 +12,13 @@ import com.se.hmsbackend.service.MailService;
 import com.se.hmsbackend.utils.StringUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @CrossOrigin
 @RestController
 public class DoctorController {
@@ -31,22 +34,35 @@ public class DoctorController {
     private AdminService adminService;
     @Autowired
     private MailService mailService;
+    @Autowired
+    private CheckCodeService checkCodeService;
 
     @PostMapping("/sendToEmail")
     public R<String> sendToEmail(@RequestParam Integer type, @RequestParam String name,@RequestParam String email, HttpSession session) {
+        /*
         String code = mailService.getCheckCode();
         if(type.equals(Const.CODE_TYPE_DOCTOR_REGISTER))session.setAttribute(Const.DOCTOR_REGISTER_CODE+email,code);
         if(type.equals(Const.CODE_TYPE_DOCTOR_FORGET))session.setAttribute(Const.DOCTOR_FORGET_CODE+email,code);
-        if(type.equals(Const.CODE_TYPE_PATIENT_REGISTER))session.setAttribute(Const.PATIENT_REGISTER_CODE+email,code);
+        if(type.equals(Const.CODE_TYPE_PATIENT_REGISTER)){session.setAttribute(Const.PATIENT_REGISTER_CODE+email,code);log.info("addsuccess");}
         if(type.equals(Const.CODE_TYPE_PATIENT_FORGET))session.setAttribute(Const.PATIENT_FORGET_CODE+email,code);
         mailService.sendMail(name,email,code);
+        log.info(type+ " sendToEmail: ("+Const.PATIENT_REGISTER_CODE+email+")"+code+" insession:"+session.getAttribute(Const.PATIENT_REGISTER_CODE+email)+"sessionId:"+session.getId());
+        return R.success("验证码邮件发送成功");
+
+         */
+        if(checkCodeService.getByEmailAndType(email,type)!=null)return R.error("邮箱已注册");
+        String code = mailService.getCheckCode();
+        checkCodeService.addCheckCode(type, email, code);
+        mailService.sendMail(name,email,code);
+        log.info(type+ " sendToEmail: ("+Const.PATIENT_REGISTER_CODE+email+")"+code+" insession:"+session.getAttribute(Const.PATIENT_REGISTER_CODE+email)+"sessionId:"+session.getId());
         return R.success("验证码邮件发送成功");
     }
 
     @PostMapping("/doctorRegister")
     public R<Doctor> doctorRegister(@RequestParam String code,@RequestParam String confirmPW, @RequestBody Doctor doctor, HttpSession session){
         String email = doctor.getDoctorMail();
-        Object codeInSession = session.getAttribute(Const.DOCTOR_REGISTER_CODE+email);
+//        Object codeInSession = session.getAttribute(Const.DOCTOR_REGISTER_CODE+email);
+        String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_DOCTOR_REGISTER, email);
 
         if(!code.equals(codeInSession))return R.error("验证码错误");
         if(!confirmPW.equals(doctor.getDoctorPassword()))return R.error("两次密码不一致");
@@ -68,7 +84,8 @@ public class DoctorController {
 
     @PostMapping("/docterChangepwd")
     public R<String> docterChangepwd(@RequestParam String code, @RequestParam String doctor_pwd, @RequestParam String email, HttpSession session){
-        Object codeInSession = session.getAttribute(Const.DOCTOR_FORGET_CODE+email);
+//        Object codeInSession = session.getAttribute(Const.DOCTOR_FORGET_CODE+email);
+        String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_DOCTOR_FORGET,email);
         if(!code.equals(codeInSession))return R.error("验证码错误");
 
         Doctor doctor = doctorService.getDoctorByMail(email);

@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Enumeration;
 
 @Slf4j
 @WebFilter(filterName = "loginCheckFilter",urlPatterns = "/*")
@@ -22,14 +24,28 @@ public class LoginCheckFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
 
-        //测试，直接放行
-//        filterChain.doFilter(request,response);
-//        if(true)return;
+        response.setHeader("Access-Control-Allow-Origin","http://localhost:8080");
+        response.setHeader("Access-Control-Allow-Credentials","true");
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Max-Age", "3600");
 
         String requestURI =request.getRequestURI();
         String authority = AuthorityUtil.getAuthority(requestURI);
-//        System.out.println("拦截："+requestURI);
+
         log.info("拦截： "+requestURI);
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements())             //读取请求消息头
+        {
+            String name = headerNames.nextElement();
+            String value = request.getHeader(name);
+            log.info(name+": "+value);
+        }
+        log.info("coocie: "+ Arrays.toString(request.getCookies()));
+
+        //测试，直接放行
+        filterChain.doFilter(request,response);
+        if(true)return;
+
 //        不需要权限，放行
         if(Const.NO_AUTHORITY.equals(authority)){
             filterChain.doFilter(request,response);

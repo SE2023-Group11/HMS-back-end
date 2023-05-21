@@ -15,6 +15,7 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/InfoAdminDao.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/PatientDao.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/InfoAdminService.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/CheckCode.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/controller/ScheduleController.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/exception/SystemException.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/InfoDoctorService.java
@@ -30,6 +31,7 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/controller/GlobalExceptionController.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/InfoAdminDetailDao.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/common/Const.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/CheckCodeService.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/InfoPatient.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/SectionDao.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/controller/SectionController.java
@@ -50,3 +52,4 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/InfoAdminDetail.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/MailUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/DoctorDao.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/CheckCodeDao.java

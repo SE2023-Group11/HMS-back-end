@@ -1,7 +1,6 @@
 com/se/hmsbackend/service/ScheduleService.class
 com/se/hmsbackend/dao/InfoDoctorDao.class
 com/se/hmsbackend/pojo/Schedule.class
-com/se/hmsbackend/utils/JsonUtil$1.class
 com/se/hmsbackend/common/R.class
 com/se/hmsbackend/dao/OrderDao.class
 com/se/hmsbackend/utils/InfoUtil.class
@@ -21,8 +20,10 @@ com/se/hmsbackend/controller/GlobalExceptionController.class
 com/se/hmsbackend/fliter/LoginCheckFilter.class
 com/se/hmsbackend/pojo/InfoPatient.class
 com/se/hmsbackend/controller/OrderController.class
+com/se/hmsbackend/dao/CheckCodeDao.class
 com/se/hmsbackend/service/InfoPatientService.class
 com/se/hmsbackend/service/InfoDoctorService.class
+com/se/hmsbackend/service/CheckCodeService.class
 com/se/hmsbackend/dao/ScheduleDao.class
 com/se/hmsbackend/utils/StringUtil.class
 com/se/hmsbackend/dao/DoctorDao.class
@@ -36,6 +37,7 @@ com/se/hmsbackend/HmsBackEndApplication.class
 com/se/hmsbackend/pojo/InfoAdmin.class
 com/se/hmsbackend/pojo/InfoDoctor.class
 com/se/hmsbackend/dao/InfoAdminDetailDao.class
+com/se/hmsbackend/pojo/CheckCode.class
 com/se/hmsbackend/pojo/Order.class
 com/se/hmsbackend/service/DoctorService.class
 com/se/hmsbackend/pojo/InfoAdminDetail.class

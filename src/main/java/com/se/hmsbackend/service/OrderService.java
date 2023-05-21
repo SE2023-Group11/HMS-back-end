@@ -59,16 +59,16 @@ public class OrderService {
         return true;
     }
 
-    @Async
-    @Scheduled(cron = "0 0 4 * * ? *")
-    public void orderBroken(){
-        LocalDate day = LocalDate.now();
-        day = day.minusDays(1);
-        List<Order> orders = getAllOrders();
-        for(Order order : orders){
-            if(day.equals(order.getDay()) && Const.ORDER_STATUS_WAITING.equals(order.getOrderStatus())){
-                updateOrderStatus(order.getOrderId(), Const.ORDER_STATUS_BROKEN);
-            }
-        }
-    }
+//    @Async
+//    @Scheduled(cron = "0 0 4 * * ? *")
+//    public void orderBroken(){
+//        LocalDate day = LocalDate.now();
+//        day = day.minusDays(1);
+//        List<Order> orders = getAllOrders();
+//        for(Order order : orders){
+//            if(day.equals(order.getDay()) && Const.ORDER_STATUS_WAITING.equals(order.getOrderStatus())){
+//                updateOrderStatus(order.getOrderId(), Const.ORDER_STATUS_BROKEN);
+//            }
+//        }
+//    }
 }
