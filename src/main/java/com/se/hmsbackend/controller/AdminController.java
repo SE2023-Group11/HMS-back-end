@@ -1,11 +1,15 @@
 package com.se.hmsbackend.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.Doctor;
+import com.se.hmsbackend.pojo.Section;
 import com.se.hmsbackend.service.DoctorService;
 import com.se.hmsbackend.service.InfoAdminService;
 import com.se.hmsbackend.service.InfoDoctorService;
+import com.se.hmsbackend.service.SectionService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +29,8 @@ public class AdminController {
     private InfoAdminService infoAdminService;
     @Autowired
     private InfoDoctorService infoDoctorService;
+    @Autowired
+    private SectionService sectionService;
 
     @PostMapping("/getDoctorInfo")
     public R<List<Doctor>> getDoctor(@RequestParam String doctorName){
@@ -33,9 +39,12 @@ public class AdminController {
         return R.success(doctors);
     }
     @PostMapping("/changeDoctorInfo")
-    public R<Doctor> changeDoctorInfo(@RequestParam String id, @RequestParam String info, HttpServletRequest request){
+    public R<JSONObject> changeDoctorInfo(@RequestParam String id, @RequestParam String info, HttpServletRequest request){
         Doctor doctor = doctorService.changeDoctorInfo(id, info);
-        if(doctor != null)return R.success(doctor);
+        Section section = sectionService.getById(doctor.getDoctorSection());
+        JSONObject res = (JSONObject) JSON.toJSON(doctor);
+        res.put("doctorSection", section.getSectionSecname());
+        if(doctor != null)return R.success(res);
         return R.error("修改失败");
     }
 }
