@@ -10,6 +10,7 @@ import com.se.hmsbackend.service.DoctorService;
 import com.se.hmsbackend.service.ScheduleService;
 import com.se.hmsbackend.service.SectionService;
 import com.se.hmsbackend.utils.ScheduleUtil;
+import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -49,8 +50,9 @@ public class ScheduleController {
     }
 
     @PostMapping("/getSchedule")
-    public R<Schedule> getSchedule(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<Schedule> getSchedule(HttpServletRequest request,@RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Schedule schedule = scheduleService.getScheduleByDoctorId(nowLoggedInId);
         return R.success(schedule);
     }

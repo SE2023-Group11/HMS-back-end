@@ -52,17 +52,13 @@ public class InfoAdminController {
     }
 
     @PostMapping("/acceptNotify")
-    public R<InfoAdmin> acceptInfo(@RequestParam Integer infoId, HttpServletRequest request){
-        HttpSession session = request.getSession();
-        if(!Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(session.getAttribute(Const.NOW_LOGGED_IN_TYPE)))return R.error("当前登录用户非管理员");
+    public R<InfoAdmin> acceptInfo(@RequestParam Integer infoId){
         InfoAdmin info = infoAdminService.acceptInfo(infoId);
         return R.success(info);
     }
 
     @PostMapping("/declineNotify")
-    public R<InfoAdmin> denyInfo(@RequestParam Integer infoId, HttpServletRequest request){
-        HttpSession session = request.getSession();
-        if(!Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(session.getAttribute(Const.NOW_LOGGED_IN_TYPE)))return R.error("当前登录用户非管理员");
+    public R<InfoAdmin> denyInfo(@RequestParam Integer infoId){
         InfoAdmin info = infoAdminService.denyInfo(infoId);
         return R.success(info);
     }

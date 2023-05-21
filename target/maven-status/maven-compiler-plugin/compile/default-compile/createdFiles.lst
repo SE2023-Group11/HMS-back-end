@@ -36,6 +36,7 @@ com/se/hmsbackend/dao/SectionDao.class
 com/se/hmsbackend/HmsBackEndApplication.class
 com/se/hmsbackend/pojo/InfoAdmin.class
 com/se/hmsbackend/pojo/InfoDoctor.class
+com/se/hmsbackend/utils/TokenUtil.class
 com/se/hmsbackend/dao/InfoAdminDetailDao.class
 com/se/hmsbackend/pojo/CheckCode.class
 com/se/hmsbackend/pojo/Order.class

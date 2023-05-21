@@ -5,6 +5,7 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/Admin.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/DataGenUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/InfoDoctor.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/TokenUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/ScheduleService.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/JsonUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/HmsBackEndApplication.java

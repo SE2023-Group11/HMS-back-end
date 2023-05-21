@@ -10,9 +10,11 @@ import com.se.hmsbackend.pojo.InfoDoctor;
 import com.se.hmsbackend.service.*;
 import com.se.hmsbackend.service.MailService;
 import com.se.hmsbackend.utils.StringUtil;
+import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.el.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -102,11 +104,12 @@ public class DoctorController {
         }catch (Exception ignored){}
         if(admin != null){
             if(!password.equals(admin.getAdminPassword()))return R.error("密码错误");
-            HttpSession session = request.getSession();
-            session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_ADMIN);
-            session.setAttribute(Const.NOW_LOGGED_IN_ID,admin.getAdminId());
-            session.setAttribute(Const.TOKEN, session.getId());
-            return R.successAdmin(session.getId());
+//            HttpSession session = request.getSession();
+//            session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_ADMIN);
+//            session.setAttribute(Const.NOW_LOGGED_IN_ID,admin.getAdminId());
+//            session.setAttribute(Const.TOKEN, session.getId());
+            String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_ADMIN, admin.getAdminId().toString());
+            return R.successAdmin(token);
         }
 
         Doctor doctor = doctorService.getDoctorById(uid);
@@ -114,21 +117,24 @@ public class DoctorController {
         if(doctor == null)return R.error("用户不存在");
         if(!password.equals(doctor.getDoctorPassword()))return R.error("密码错误");
 
-        HttpSession session = request.getSession();
-        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_DOCTOR);
-        session.setAttribute(Const.NOW_LOGGED_IN_ID,doctor.getDoctorId());
-        session.setAttribute(Const.TOKEN, session.getId());
-        return R.success(session.getId());
+//        HttpSession session = request.getSession();
+//        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_DOCTOR);
+//        session.setAttribute(Const.NOW_LOGGED_IN_ID,doctor.getDoctorId());
+//        session.setAttribute(Const.TOKEN, session.getId());
+        String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_DOCTOR, doctor.getDoctorId());
+        return R.success(token);
     }
     @PostMapping("/getDoctorMessage")
-    public R<List<InfoDoctor>> getDoctorMessage(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<List<InfoDoctor>> getDoctorMessage(HttpServletRequest request, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         List<InfoDoctor> infoDoctors = infoDoctorService.getInfoDoctor(nowLoggedInId);
         return R.success(infoDoctors);
     }
     @PostMapping("/changeDoctor")
-    public R<String> changeNowLoggedDoctor(HttpServletRequest request, @RequestBody Doctor doctor){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<String> changeNowLoggedDoctor(HttpServletRequest request, @RequestBody Doctor doctor, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Doctor oldDoctor = doctorService.getDoctorById(nowLoggedInId);
         doctor.setDoctorId(nowLoggedInId);
         doctor.setDoctorPassword(oldDoctor.getDoctorPassword());
@@ -139,8 +145,9 @@ public class DoctorController {
         return R.success("等待管理员审核中");
     }
     @PostMapping("/saveIntroduction")
-    public R<String> changeNowLoggedDoctorInfo(HttpServletRequest request, @RequestBody JSONObject json) {
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<String> changeNowLoggedDoctorInfo(HttpServletRequest request, @RequestBody JSONObject json, @RequestParam String token) {
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         String doctorIntroduction = json.getString("doctorIntroduction");
         Doctor doctor = doctorService.getDoctorById(nowLoggedInId);
         doctor.setDoctorIntroduction(doctorIntroduction);
@@ -148,16 +155,18 @@ public class DoctorController {
         return R.success("等待管理员审核中");
     }
     @PostMapping("/logoutDoctor")
-    public R<String> logoutDoctor(HttpServletRequest request){
-        HttpSession session = request.getSession();
-        session.removeAttribute(Const.TOKEN);
-        session.removeAttribute(Const.NOW_LOGGED_IN_TYPE);
-        session.removeAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<String> logoutDoctor(@RequestParam String token,HttpServletRequest request){
+//        HttpSession session = request.getSession();
+//        session.removeAttribute(Const.TOKEN);
+//        session.removeAttribute(Const.NOW_LOGGED_IN_TYPE);
+//        session.removeAttribute(Const.NOW_LOGGED_IN_ID);
+        TokenUtil.addTokenToBlack(token);
         return R.success("退出成功");
     }
     @GetMapping("/getDoctorInformation")
-    public R<Doctor> getDoctorInformation(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<Doctor> getDoctorInformation(HttpServletRequest request, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(doctorService.getDoctorById(nowLoggedInId));
     }
 }

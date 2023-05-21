@@ -9,6 +9,7 @@ import com.se.hmsbackend.pojo.Patient;
 import com.se.hmsbackend.service.CheckCodeService;
 import com.se.hmsbackend.service.InfoPatientService;
 import com.se.hmsbackend.service.PatientService;
+import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -67,15 +68,17 @@ public class PatientController {
         if(patient == null)return R.error("用户不存在");
         if(!password.equals(patient.getPatientPassword()))return R.error("密码错误");
 
-        HttpSession session = request.getSession();
-        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_PATIENT);
-        session.setAttribute(Const.NOW_LOGGED_IN_ID,patient.getPatientId());
-        session.setAttribute(Const.TOKEN, session.getId());
-        return R.success(session.getId());
+//        HttpSession session = request.getSession();
+//        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_PATIENT);
+//        session.setAttribute(Const.NOW_LOGGED_IN_ID,patient.getPatientId());
+//        session.setAttribute(Const.TOKEN, session.getId());
+        String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_PATIENT, patient.getPatientId());
+        return R.success(token);
     }
     @PostMapping("/changePatient")
-    public R<String> changeNowLoggedDoctor(HttpServletRequest request, @RequestBody Patient patient){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<String> changeNowLoggedDoctor(HttpServletRequest request, @RequestBody Patient patient, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Patient oldPatient = patientService.getPatientById(nowLoggedInId);
         patient.setPatientId(nowLoggedInId);
         patient.setPatientPassword(oldPatient.getPatientPassword());
@@ -84,14 +87,16 @@ public class PatientController {
         return R.success("修改成功");
     }
     @PostMapping("/getPatientMessage")
-    public R<List<InfoPatient>> getPatientMessage(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<List<InfoPatient>> getPatientMessage(HttpServletRequest request, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         List<InfoPatient> infoPatients = infoPatientService.getInfoPatient(nowLoggedInId);
         return R.success(infoPatients);
     }
     @GetMapping("/getPatientInformation")
-    public R<Patient> getPatientInformation(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<Patient> getPatientInformation(HttpServletRequest request, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(patientService.getPatientById(nowLoggedInId));
     }
 

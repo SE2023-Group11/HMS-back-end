@@ -7,6 +7,7 @@ import com.se.hmsbackend.pojo.InfoPatient;
 import com.se.hmsbackend.pojo.Order;
 import com.se.hmsbackend.service.*;
 import com.se.hmsbackend.utils.InfoUtil;
+import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,21 +35,24 @@ public class OrderController {
     private PatientService patientService;
 
     @PostMapping("/getAppointmentList")
-    public R<List<Order>> getAppointmentListDoctor(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<List<Order>> getAppointmentListDoctor(HttpServletRequest request, @RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(orderService.getByDoctorId(nowLoggedInId));
     }
 
     @GetMapping("/getPatientAppointment")
-    public R<List<Order>> getAppointmentListPatient(HttpServletRequest request){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<List<Order>> getAppointmentListPatient(HttpServletRequest request,@RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(orderService.getByPatientId(nowLoggedInId));
     }
 
     @Transactional
     @PostMapping("/addAppointment")
-    public R<String> addAppointment(HttpServletRequest request, @RequestParam String doctorId, @RequestParam String day, @RequestParam Integer time){
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<String> addAppointment(HttpServletRequest request, @RequestParam String doctorId, @RequestParam String day, @RequestParam Integer time,@RequestParam String token){
+//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         if(orderService.addOrder(nowLoggedInId,doctorId,day,time)){
 //            更改排班信息
             scheduleService.updateScheduleToWork(doctorId,day,time);
@@ -85,8 +89,6 @@ public class OrderController {
     @Transactional
     @PostMapping("/ChangeAppointmentStatus")
     public R<String> changeAppointmentStatus(HttpServletRequest request, @RequestParam Integer orderId){
-        Order order = orderService.getByOrderId(orderId);
-        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         if(orderService.updateOrderStatus(orderId,Const.ORDER_STATUS_FINISHED))return R.success("操作成功");
         return R.error("操作失败");
     }

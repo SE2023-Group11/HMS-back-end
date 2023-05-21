@@ -34,9 +34,6 @@ public class AdminController {
     }
     @PostMapping("/changeDoctorInfo")
     public R<Doctor> changeDoctorInfo(@RequestParam String id, @RequestParam String info, HttpServletRequest request){
-        HttpSession session = request.getSession();
-        if(!Const.NOW_LOGGED_IN_TYPE_ADMIN.equals(session.getAttribute(Const.NOW_LOGGED_IN_TYPE)))return R.error("当前登录用户非管理员");
-
         Doctor doctor = doctorService.changeDoctorInfo(id, info);
         if(doctor != null)return R.success(doctor);
         return R.error("修改失败");
