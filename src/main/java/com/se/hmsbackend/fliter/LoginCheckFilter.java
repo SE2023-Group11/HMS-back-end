@@ -28,12 +28,19 @@ public class LoginCheckFilter implements Filter {
         response.setHeader("Access-Control-Allow-Origin","http://localhost:8080");
         response.setHeader("Access-Control-Allow-Credentials","true");
         response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Allow-Headers", "*");
         response.setHeader("Access-Control-Max-Age", "3600");
+        if ("OPTIONS".equals(request.getMethod())){//这里通过判断请求的方法，判断此次是否是预检请求，如果是，立即返回一个204状态吗，标示，允许跨域；预检后，正式请求，这个方法参数就是我们设置的post了
+            response.setStatus(204); //HttpStatus.SC_NO_CONTENT = 204
+            log.info("OPTIONS");
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+        }
 
         String requestURI =request.getRequestURI();
         String authority = AuthorityUtil.getAuthority(requestURI);
 
-        log.info("拦截： "+requestURI);
+        log.info("拦截： "+requestURI+" method: "+request.getMethod());
 //        Enumeration<String> headerNames = request.getHeaderNames();
 //        while (headerNames.hasMoreElements())             //读取请求消息头
 //        {

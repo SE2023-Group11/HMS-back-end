@@ -17,9 +17,10 @@ import java.util.*;
 public class TokenUtil {
     private static Set<String> black = new HashSet<>();
     //generateKey()生成的密钥
+//    TODO：修改token有效期
     private static String key="BRNdyltTMUZD0doOVsbfHSO8v27YS484BJZjXYNx1Qk=";
     //设置有效期                 （ 5小时）
-    private static Long millData=60*5*60*1000L;
+    private static Long millData=100 * 60*5*60*1000L;//500h
 
     /**
      * 生成密钥

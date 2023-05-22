@@ -30,12 +30,10 @@ public class PatientController {
     private CheckCodeService checkCodeService;
 
     @PostMapping("/patientRegister")
-    public R<Patient> doctorRegister(@RequestParam String code, @RequestParam String confirmPW, @RequestBody Patient patient, HttpSession session){
+    public R<Patient> doctorRegister(@RequestParam String code, @RequestParam String confirmPW, @RequestBody Patient patient){
         log.info("code: ("+code+")" + "cofirmPW: ("+confirmPW+")"+"patient: ("+patient+")");
         String email = patient.getPatientMail();
-//        Object codeInSession = session.getAttribute(Const.PATIENT_REGISTER_CODE+email);
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_PATIENT_REGISTER, email);
-        log.info("("+Const.PATIENT_REGISTER_CODE+email+") "+"codeInSession: ("+codeInSession+") sessionId: "+session.getId());
         if(!code.equals(codeInSession))return R.error("验证码错误");
         if(!confirmPW.equals(patient.getPatientPassword()))return R.error("两次密码不一致");
         if(patientService.hasNumber(patient.getPatientNumber()))return R.error("该身份证号已注册");
@@ -50,7 +48,7 @@ public class PatientController {
     }
 
     @PostMapping("/patientChangepwd")
-    public R<String> patientChangepwd(@RequestParam String code, @RequestParam String patient_pwd, @RequestParam String email, HttpSession session){
+    public R<String> patientChangepwd(@RequestParam String code, @RequestParam String patient_pwd, @RequestParam String email){
 //        Object codeInSession = session.getAttribute(Const.PATIENT_FORGET_CODE+email);
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_PATIENT_FORGET, email);
         if(!code.equals(codeInSession))return R.error("验证码错误");
