@@ -43,3 +43,24 @@
 2023-05-22T13:42:50.117+08:00  INFO 6217 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
 2023-05-22T13:42:50.129+08:00  INFO 6217 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 2023-05-22T13:42:50.135+08:00  INFO 6217 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
+2023-05-22T17:14:56.215+08:00  INFO 6800 --- [main] com.se.hmsbackend.utils.TokenUtilTest    : Starting TokenUtilTest using Java 17.0.7 with PID 6800 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-22T17:14:56.217+08:00  INFO 6800 --- [main] com.se.hmsbackend.utils.TokenUtilTest    : No active profile set, falling back to 1 default profile: "default"
+2023-05-22T17:14:57.576+08:00  INFO 6800 --- [main] com.se.hmsbackend.utils.TokenUtilTest    : Started TokenUtilTest in 1.633 seconds (process running for 2.481)
+2023-05-22T17:15:08.093+08:00  INFO 6891 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 6891 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-22T17:15:08.101+08:00  INFO 6891 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-22T17:15:09.164+08:00  INFO 6891 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-22T17:15:09.173+08:00  INFO 6891 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-22T17:15:09.174+08:00  INFO 6891 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-22T17:15:09.264+08:00  INFO 6891 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-22T17:15:09.265+08:00  INFO 6891 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
+2023-05-22T17:15:10.017+08:00  INFO 6891 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-22T17:15:10.030+08:00  INFO 6891 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.429 seconds (process running for 2.996)
+2023-05-22T17:15:40.500+08:00  INFO 6891 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-22T17:15:40.501+08:00  INFO 6891 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-22T17:15:40.502+08:00  INFO 6891 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-22T17:15:40.507+08:00  INFO 6891 --- [http-nio-8080-exec-2] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /loginDoctor method: POST
+2023-05-22T17:15:40.544+08:00  INFO 6891 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-22T17:15:41.319+08:00  INFO 6891 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d615d6e
+2023-05-22T17:15:41.321+08:00  INFO 6891 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-22T17:16:41.160+08:00  INFO 6891 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-22T17:16:41.168+08:00  INFO 6891 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

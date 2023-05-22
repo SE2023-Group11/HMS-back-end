@@ -34,7 +34,7 @@ public class PatientController {
         log.info("code: ("+code+")" + "cofirmPW: ("+confirmPW+")"+"patient: ("+patient+")");
         String email = patient.getPatientMail();
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_PATIENT_REGISTER, email);
-        if(!code.equals(codeInSession))return R.error("验证码错误");
+        if(!code.equals(codeInSession))return R.error("验证码错误或已过期");
         if(!confirmPW.equals(patient.getPatientPassword()))return R.error("两次密码不一致");
         if(patientService.hasNumber(patient.getPatientNumber()))return R.error("该身份证号已注册");
         if(patientService.hasMail(patient.getPatientMail()))return R.error("邮箱已注册");
@@ -51,7 +51,7 @@ public class PatientController {
     public R<String> patientChangepwd(@RequestParam String code, @RequestParam String patient_pwd, @RequestParam String email){
 //        Object codeInSession = session.getAttribute(Const.PATIENT_FORGET_CODE+email);
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_PATIENT_FORGET, email);
-        if(!code.equals(codeInSession))return R.error("验证码错误");
+        if(!code.equals(codeInSession))return R.error("验证码错误或已过期");
 
         Patient patient = patientService.getPatientByMail(email);
         patient.setPatientPassword(patient_pwd);

@@ -14,6 +14,6 @@ public interface CheckCodeDao {
 
     @Update("UPDATE check_code SET code=#{code}, type=#{type}, email=#{email}, time=#{time} WHERE id=#{id}")
     public void updateCheckCode(CheckCode checkCode);
-    @Delete("DELETE FROM check_code WHERE email = #{email}")
-    public void deleteByEmail(String email);
+    @Delete("DELETE FROM check_code WHERE email = #{email} AND type=#{type}")
+    public void deleteByEmailAndType(String email, Integer type);
 }

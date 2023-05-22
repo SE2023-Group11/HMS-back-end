@@ -62,7 +62,7 @@ public class LoginCheckFilter implements Filter {
 
         String token = request.getParameter(Const.TOKEN);
         if(!TokenUtil.isRight(token)){
-            response.getWriter().write(JSON.toJSONString(R.error("Token已过期")));
+            response.getWriter().write(JSON.toJSONString(R.error("Token错误或已过期")));
             return;
         }
 //        有管理员权限，放行

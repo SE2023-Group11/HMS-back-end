@@ -52,7 +52,7 @@ public class DoctorController {
         return R.success("验证码邮件发送成功");
 
          */
-        if(checkCodeService.getByEmailAndType(email,type)!=null)return R.error("邮箱已注册");
+//        if(checkCodeService.getByEmailAndType(email,type)!=null)return R.error("邮箱已注册");
         String code = mailService.getCheckCode();
         checkCodeService.addCheckCode(type, email, code);
         mailService.sendMail(name,email,code);
@@ -66,7 +66,7 @@ public class DoctorController {
 //        Object codeInSession = session.getAttribute(Const.DOCTOR_REGISTER_CODE+email);
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_DOCTOR_REGISTER, email);
 
-        if(!code.equals(codeInSession))return R.error("验证码错误");
+        if(!code.equals(codeInSession))return R.error("验证码错误或已过期");
         if(!confirmPW.equals(doctor.getDoctorPassword()))return R.error("两次密码不一致");
         if(doctorService.hasNumber(doctor.getDoctorNumber()))return R.error("该身份证号已注册");
         if(doctorService.hasMail(doctor.getDoctorMail()))return R.error("邮箱已注册");
@@ -88,7 +88,7 @@ public class DoctorController {
     public R<String> docterChangepwd(@RequestParam String code, @RequestParam String doctor_pwd, @RequestParam String email, HttpSession session){
 //        Object codeInSession = session.getAttribute(Const.DOCTOR_FORGET_CODE+email);
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_DOCTOR_FORGET,email);
-        if(!code.equals(codeInSession))return R.error("验证码错误");
+        if(!code.equals(codeInSession))return R.error("验证码错误或已过期");
 
         Doctor doctor = doctorService.getDoctorByMail(email);
         doctor.setDoctorPassword(doctor_pwd);
