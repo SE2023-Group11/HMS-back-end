@@ -66,16 +66,17 @@ public class TokenUtil {
      * 检验token
      */
     public static Claims parse(String token){
-        if(!isRight(token))return null;
         Jws<Claims> claimsJws=null;
         try {
             claimsJws= Jwts.parserBuilder().
                     setSigningKey(key).//指定秘钥
                             build().parseClaimsJws(token);//解析token字符串
+            return claimsJws.getBody();
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-        return claimsJws.getBody();
+
     }
 
     public static void addTokenToBlack(String token){

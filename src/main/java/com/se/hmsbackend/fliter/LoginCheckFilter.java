@@ -50,9 +50,9 @@ public class LoginCheckFilter implements Filter {
 //        }
 //        log.info("coocie: "+ Arrays.toString(request.getCookies()));
 
-        //测试，直接放行
-        filterChain.doFilter(request,response);
-        if(true)return;
+//        //测试，直接放行
+//        filterChain.doFilter(request,response);
+//        if(true)return;
 
 //        不需要权限，放行
         if(Const.NO_AUTHORITY.equals(authority)){

@@ -1,5 +1,7 @@
 package com.se.hmsbackend.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.Doctor;
@@ -49,7 +51,6 @@ public class PatientController {
 
     @PostMapping("/patientChangepwd")
     public R<String> patientChangepwd(@RequestParam String code, @RequestParam String patient_pwd, @RequestParam String email){
-//        Object codeInSession = session.getAttribute(Const.PATIENT_FORGET_CODE+email);
         String codeInSession = checkCodeService.getCode(Const.CODE_TYPE_PATIENT_FORGET, email);
         if(!code.equals(codeInSession))return R.error("验证码错误或已过期");
 
@@ -60,21 +61,17 @@ public class PatientController {
     }
 
     @PostMapping("/loginPatient")
-    public R<String> loginDoctor(@RequestParam String uid, @RequestParam String password, HttpServletRequest request) {
+    public R<String> loginDoctor(@RequestParam String uid, @RequestParam String password) {
         Patient patient = patientService.getPatientById(uid);
         if(patient == null)patient = patientService.getPatientByNumber(uid);
         if(patient == null)return R.error("用户不存在");
         if(!password.equals(patient.getPatientPassword()))return R.error("密码错误");
 
-//        HttpSession session = request.getSession();
-//        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_PATIENT);
-//        session.setAttribute(Const.NOW_LOGGED_IN_ID,patient.getPatientId());
-//        session.setAttribute(Const.TOKEN, session.getId());
         String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_PATIENT, patient.getPatientId());
         return R.success(token);
     }
     @PostMapping("/changePatient")
-    public R<String> changeNowLoggedDoctor(HttpServletRequest request, @RequestBody Patient patient, @RequestParam String token){
+    public R<String> changeNowLoggedDoctor(@RequestBody Patient patient, @RequestParam String token){
 //        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Patient oldPatient = patientService.getPatientById(nowLoggedInId);
@@ -85,7 +82,7 @@ public class PatientController {
         return R.success("修改成功");
     }
     @PostMapping("/getPatientMessage")
-    public R<List<InfoPatient>> getPatientMessage(HttpServletRequest request, @RequestParam String token){
+    public R<List<InfoPatient>> getPatientMessage(@RequestParam String token){
 //        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         List<InfoPatient> infoPatients = infoPatientService.getInfoPatient(nowLoggedInId);
@@ -93,7 +90,6 @@ public class PatientController {
     }
     @GetMapping("/getPatientInformation")
     public R<Patient> getPatientInformation(HttpServletRequest request, @RequestParam String token){
-//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(patientService.getPatientById(nowLoggedInId));
     }
@@ -102,5 +98,27 @@ public class PatientController {
     public R<String> getPatientName(@RequestParam String patientId){
         Patient patient = patientService.getPatientById(patientId);
         return R.success(patient.getPatientName());
+    }
+
+    @PostMapping("/DoctorGetPatientInfo")
+    public R<JSONObject> doctorGetPatientInfo(@RequestParam String patientId){
+            Patient patient = patientService.getPatientById(patientId);
+            JSONObject res = (JSONObject) JSON.toJSON(patient);
+            res.remove("patientPassword");
+            return R.success(res);
+    }
+    @PostMapping("/savehistory")
+    public R<String> saveHistory(@RequestParam String token, @RequestParam String phistory){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Patient patient = patientService.getPatientById(nowLoggedInId);
+        patient.setPatientHistory(phistory);
+        patientService.updatePatient(patient);
+        return R.success("修改成功");
+    }
+    @GetMapping("/getHistory")
+    public R<String> getHistory(@RequestParam String token){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Patient patient = patientService.getPatientById(nowLoggedInId);
+        return R.success(patient.getPatientHistory());
     }
 }

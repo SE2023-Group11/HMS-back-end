@@ -1,66 +1,44 @@
-2023-05-22T13:14:06.301+08:00  INFO 4297 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 4297 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T13:14:06.306+08:00  INFO 4297 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T13:14:08.344+08:00  INFO 4297 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 2.327 seconds (process running for 3.063)
-2023-05-22T13:14:08.928+08:00  INFO 4297 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:14:08.930+08:00  INFO 4297 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
-2023-05-22T13:14:08.940+08:00  INFO 4297 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:14:08.942+08:00  INFO 4297 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
-2023-05-22T13:14:08.954+08:00  INFO 4297 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:14:08.963+08:00  INFO 4297 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
-2023-05-22T13:20:25.401+08:00  INFO 5038 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 5038 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T13:20:25.403+08:00  INFO 5038 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T13:20:26.815+08:00  INFO 5038 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.698 seconds (process running for 2.428)
-2023-05-22T13:20:27.133+08:00  INFO 5038 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:20:27.135+08:00  INFO 5038 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
-2023-05-22T13:20:27.145+08:00  INFO 5038 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:20:27.146+08:00  INFO 5038 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
-2023-05-22T13:20:27.154+08:00  INFO 5038 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:20:27.165+08:00  INFO 5038 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
-2023-05-22T13:29:26.107+08:00  INFO 5492 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 5492 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T13:29:26.108+08:00  INFO 5492 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T13:29:27.530+08:00  INFO 5492 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.712 seconds (process running for 2.451)
-2023-05-22T13:29:27.867+08:00  INFO 5492 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:29:27.868+08:00  INFO 5492 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
-2023-05-22T13:29:27.879+08:00  INFO 5492 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:29:27.880+08:00  INFO 5492 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
-2023-05-22T13:29:27.887+08:00  INFO 5492 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:29:27.893+08:00  INFO 5492 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
-2023-05-22T13:40:35.335+08:00  INFO 6020 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 6020 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T13:40:35.337+08:00  INFO 6020 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T13:40:36.764+08:00  INFO 6020 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.697 seconds (process running for 2.429)
-2023-05-22T13:40:37.107+08:00  INFO 6020 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:40:37.109+08:00  INFO 6020 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
-2023-05-22T13:40:37.118+08:00  INFO 6020 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:40:37.120+08:00  INFO 6020 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
-2023-05-22T13:40:37.133+08:00  INFO 6020 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:40:37.152+08:00  INFO 6020 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
-2023-05-22T13:42:48.365+08:00  INFO 6217 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 6217 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T13:42:48.367+08:00  INFO 6217 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T13:42:49.791+08:00  INFO 6217 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.694 seconds (process running for 2.394)
-2023-05-22T13:42:50.103+08:00  INFO 6217 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:42:50.105+08:00  INFO 6217 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
-2023-05-22T13:42:50.116+08:00  INFO 6217 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:42:50.117+08:00  INFO 6217 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
-2023-05-22T13:42:50.129+08:00  INFO 6217 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-05-22T13:42:50.135+08:00  INFO 6217 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
-2023-05-22T17:14:56.215+08:00  INFO 6800 --- [main] com.se.hmsbackend.utils.TokenUtilTest    : Starting TokenUtilTest using Java 17.0.7 with PID 6800 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T17:14:56.217+08:00  INFO 6800 --- [main] com.se.hmsbackend.utils.TokenUtilTest    : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T17:14:57.576+08:00  INFO 6800 --- [main] com.se.hmsbackend.utils.TokenUtilTest    : Started TokenUtilTest in 1.633 seconds (process running for 2.481)
-2023-05-22T17:15:08.093+08:00  INFO 6891 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 6891 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
-2023-05-22T17:15:08.101+08:00  INFO 6891 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
-2023-05-22T17:15:09.164+08:00  INFO 6891 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-05-22T17:15:09.173+08:00  INFO 6891 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-22T17:15:09.174+08:00  INFO 6891 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
-2023-05-22T17:15:09.264+08:00  INFO 6891 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-05-22T17:15:09.265+08:00  INFO 6891 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
-2023-05-22T17:15:10.017+08:00  INFO 6891 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-05-22T17:15:10.030+08:00  INFO 6891 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.429 seconds (process running for 2.996)
-2023-05-22T17:15:40.500+08:00  INFO 6891 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-22T17:15:40.501+08:00  INFO 6891 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-05-22T17:15:40.502+08:00  INFO 6891 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-05-22T17:15:40.507+08:00  INFO 6891 --- [http-nio-8080-exec-2] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /loginDoctor method: POST
-2023-05-22T17:15:40.544+08:00  INFO 6891 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-22T17:15:41.319+08:00  INFO 6891 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d615d6e
-2023-05-22T17:15:41.321+08:00  INFO 6891 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-22T17:16:41.160+08:00  INFO 6891 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-05-22T17:16:41.168+08:00  INFO 6891 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-23T09:53:42.154+08:00  INFO 4606 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 4606 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T09:53:42.159+08:00  INFO 4606 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T09:53:43.437+08:00  INFO 4606 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.543 seconds (process running for 2.357)
+2023-05-23T09:53:43.799+08:00  INFO 4606 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T09:53:43.801+08:00  INFO 4606 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
+2023-05-23T09:53:43.811+08:00  INFO 4606 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T09:53:43.812+08:00  INFO 4606 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
+2023-05-23T09:53:43.820+08:00  INFO 4606 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T09:53:43.825+08:00  INFO 4606 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
+2023-05-23T10:17:51.908+08:00  INFO 5330 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 5330 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T10:17:51.910+08:00  INFO 5330 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T10:17:52.928+08:00  INFO 5330 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T10:17:52.938+08:00  INFO 5330 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T10:17:52.938+08:00  INFO 5330 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T10:17:53.029+08:00  INFO 5330 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T10:17:53.029+08:00  INFO 5330 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1055 ms
+2023-05-23T10:17:53.749+08:00  INFO 5330 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T10:17:53.761+08:00  INFO 5330 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.341 seconds (process running for 2.891)
+2023-05-23T10:19:06.605+08:00  INFO 5330 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-23T10:19:06.606+08:00  INFO 5330 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-23T10:19:06.608+08:00  INFO 5330 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-23T10:19:06.615+08:00  INFO 5330 --- [http-nio-8080-exec-2] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /DoctorGetPatientInfo method: POST
+2023-05-23T10:19:06.714+08:00  INFO 5330 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-23T10:19:07.518+08:00  INFO 5330 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a3fb277
+2023-05-23T10:19:07.520+08:00  INFO 5330 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-23T10:21:44.788+08:00  INFO 5330 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-23T10:21:44.796+08:00  INFO 5330 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-23T10:31:49.746+08:00  INFO 5648 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 5648 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T10:31:49.749+08:00  INFO 5648 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T10:31:50.783+08:00  INFO 5648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T10:31:50.792+08:00  INFO 5648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T10:31:50.793+08:00  INFO 5648 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T10:31:50.891+08:00  INFO 5648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T10:31:50.892+08:00  INFO 5648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1092 ms
+2023-05-23T10:31:51.594+08:00  INFO 5648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T10:31:51.607+08:00  INFO 5648 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.294 seconds (process running for 2.711)
+2023-05-23T10:32:51.921+08:00  INFO 5648 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-23T10:32:51.921+08:00  INFO 5648 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-23T10:32:51.923+08:00  INFO 5648 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-23T10:32:51.927+08:00  INFO 5648 --- [http-nio-8080-exec-1] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /savehistory method: POST
+2023-05-23T10:32:52.014+08:00  INFO 5648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-23T10:32:52.894+08:00  INFO 5648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46801d05
+2023-05-23T10:32:52.898+08:00  INFO 5648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-23T10:33:31.709+08:00  INFO 5648 --- [http-nio-8080-exec-3] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /getHistory method: GET

@@ -15,11 +15,11 @@ public interface PatientDao {
     public Patient getByNumber(String patientNumber);
     @Select("SELECT * FROM patient WHERE patient_mail = #{patientMail}")
     public Patient getByMail(String patientMail);
-    @Insert("INSERT INTO patient (patient_id, patient_name, patient_number, patient_mail, patient_phone, patient_sex, patient_birthday, patient_password, patient_img) " +
-            "VALUES (#{patientId}, #{patientName}, #{patientNumber}, #{patientMail}, #{patientPhone}, #{patientSex},#{patientBirthday},#{patientPassword}, #{patientImg})")
+    @Insert("INSERT INTO patient (patient_id, patient_name, patient_number, patient_mail, patient_phone, patient_sex, patient_birthday, patient_password, patient_img, patient_history) " +
+            "VALUES (#{patientId}, #{patientName}, #{patientNumber}, #{patientMail}, #{patientPhone}, #{patientSex},#{patientBirthday},#{patientPassword}, #{patientImg}, #{patientHistory})")
     public void addPatient(Patient patient);
 
-    @Update("UPDATE patient SET patient_name = #{patientName},patient_number = #{patientNumber},patient_mail = #{patientMail}, patient_phone=#{patientPhone}," +
+    @Update("UPDATE patient SET patient_name = #{patientName},patient_number = #{patientNumber},patient_mail = #{patientMail}, patient_phone=#{patientPhone}, patient_history=#{patientHistory}," +
             " patient_sex=#{patientSex}, patient_birthday = #{patientBirthday},patient_password = #{patientPassword}, patient_img = #{patientImg} WHERE patient_id = #{patientId}")
     public void updatePatient(Patient patient);
 

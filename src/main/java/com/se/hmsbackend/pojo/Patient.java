@@ -13,11 +13,12 @@ public class Patient {
     private LocalDate patientBirthday;
     private String patientPassword;
     private String patientImg;
+    private String patientHistory;
 
     public Patient() {
     }
 
-    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDate patientBirthday, String patientPassword, String patientImg) {
+    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDate patientBirthday, String patientPassword, String patientImg, String patientHistory) {
         this.patientId = patientId;
         this.patientName = patientName;
         this.patientNumber = patientNumber;
@@ -27,6 +28,7 @@ public class Patient {
         this.patientBirthday = patientBirthday;
         this.patientPassword = patientPassword;
         this.patientImg = patientImg;
+        this.patientHistory = patientHistory;
     }
 
     @Override
@@ -41,7 +43,16 @@ public class Patient {
                 ", patientBirthday=" + patientBirthday +
                 ", patientPassword='" + patientPassword + '\'' +
                 ", patientImg='" + patientImg + '\'' +
+                ", patientHistory='" + patientHistory + '\'' +
                 '}';
+    }
+
+    public String getPatientHistory() {
+        return patientHistory;
+    }
+
+    public void setPatientHistory(String patientHistory) {
+        this.patientHistory = patientHistory;
     }
 
     public String getPatientImg() {
