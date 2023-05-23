@@ -6,6 +6,7 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/Admin.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/DataGenUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/InfoDoctor.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/controller/NewsConrtoller.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/TokenUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/ScheduleService.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/JsonUtil.java
@@ -25,6 +26,8 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/InfoPatientDao.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/common/R.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/StringUtil.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/NewsDao.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/NewsService.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/Doctor.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/utils/ScheduleUtil.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/controller/PatientController.java
@@ -43,6 +46,7 @@
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/controller/AdminController.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/ScheduleDao.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/AdminDao.java
+/home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/pojo/News.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/exception/BusinessException.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/service/PatientService.java
 /home/alpaca/items/java/HMS-back-end/src/main/java/com/se/hmsbackend/dao/InfoDoctorDao.java

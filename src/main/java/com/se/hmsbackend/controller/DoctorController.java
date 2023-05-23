@@ -63,6 +63,7 @@ public class DoctorController {
 //        更新医生的状态为未验证
         doctor.setDoctorStatus(Const.DOCTOR_STATUS_UNVERIFIED);
         doctor.setDoctorImg("https://f.pz.al/pzal/2023/05/03/5e6420e7ffe6f.png");
+        doctor.setDoctorIntroduction("暂无");
         boolean res = doctorService.addDoctor(doctor);
 
 //        将此条注册信息添加到管理员消息库，等待管理员验证

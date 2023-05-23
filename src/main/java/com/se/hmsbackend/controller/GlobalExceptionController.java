@@ -18,7 +18,7 @@ public class GlobalExceptionController {
     @ExceptionHandler(Exception.class)
     public R<String> exceptionHandler(Exception e, HttpServletResponse response){
         log.error(e.getMessage(),e);
-        return R.error("服务器错误,请稍后再试");
+        return R.error("服务器错误,请稍后再试 : " + e.getMessage());
     }
     @ExceptionHandler(BusinessException.class)
     public R<String> businessExceptionHandler(BusinessException e){

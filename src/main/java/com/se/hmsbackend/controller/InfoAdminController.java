@@ -1,5 +1,6 @@
 package com.se.hmsbackend.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
@@ -33,6 +34,7 @@ public class InfoAdminController {
             InfoAdminDetail infoDetail = infoAdminService.getInfoDetailByID(info.getDetailId());
             Section section = sectionService.getById(infoDetail.getDoctorSection());
             JSONObject infoObj = new JSONObject(true);
+            infoObj.put("infoId", info.getInfoId());
             infoObj.put("infoType",info.getInfoType());
             infoObj.put("detailId",info.getDetailId());
             infoObj.put("name",infoDetail.getDoctorName());
@@ -46,9 +48,12 @@ public class InfoAdminController {
     }
 
     @PostMapping("/getNotifyInfoByID")
-    public R<InfoAdminDetail> getNotifyInfoByID(@RequestParam Integer detailId){
+    public R<JSONObject> getNotifyInfoByID(@RequestParam Integer detailId){
         InfoAdminDetail info = infoAdminService.getInfoDetailByID(detailId);
-        return R.success(info);
+        Section section = sectionService.getById(info.getDoctorSection());
+        JSONObject res = (JSONObject) JSON.toJSON(info);
+        res.put("doctorSection", section.getSectionSecname());
+        return R.success(res);
     }
 
     @PostMapping("/acceptNotify")
