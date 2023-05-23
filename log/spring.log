@@ -166,3 +166,148 @@ Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled metho
 2023-05-23T20:03:21.002+08:00  INFO 6464 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
 2023-05-23T20:03:21.020+08:00  INFO 6464 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 2023-05-23T20:03:21.037+08:00  INFO 6464 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
+2023-05-23T20:23:16.853+08:00  INFO 7068 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 7068 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T20:23:16.856+08:00  INFO 7068 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T20:23:17.951+08:00  INFO 7068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T20:23:17.960+08:00  INFO 7068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T20:23:17.961+08:00  INFO 7068 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T20:23:18.054+08:00  INFO 7068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T20:23:18.055+08:00  INFO 7068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1133 ms
+2023-05-23T20:23:18.819+08:00  INFO 7068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T20:23:18.833+08:00  INFO 7068 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.482 seconds (process running for 2.973)
+2023-05-23T20:23:32.485+08:00  INFO 7211 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 7211 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T20:23:32.491+08:00  INFO 7211 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T20:23:33.603+08:00  INFO 7211 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T20:23:33.615+08:00  INFO 7211 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T20:23:33.615+08:00  INFO 7211 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T20:23:33.736+08:00  INFO 7211 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T20:23:33.737+08:00  INFO 7211 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1176 ms
+2023-05-23T20:23:34.520+08:00  INFO 7211 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T20:23:34.535+08:00  INFO 7211 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.576 seconds (process running for 3.201)
+2023-05-23T20:24:21.788+08:00  INFO 7211 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-23T20:24:21.788+08:00  INFO 7211 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-23T20:24:21.790+08:00  INFO 7211 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-23T20:24:21.798+08:00  INFO 7211 --- [http-nio-8080-exec-2] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /getAppointmentList method: POST
+2023-05-23T20:24:21.906+08:00  INFO 7211 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-23T20:24:23.227+08:00  INFO 7211 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d935039
+2023-05-23T20:24:23.230+08:00  INFO 7211 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-23T20:26:49.069+08:00  INFO 7211 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-23T20:26:49.082+08:00  INFO 7211 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-23T20:26:53.187+08:00  INFO 7402 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 7402 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T20:26:53.191+08:00  INFO 7402 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T20:26:54.250+08:00  INFO 7402 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T20:26:54.260+08:00  INFO 7402 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T20:26:54.260+08:00  INFO 7402 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T20:26:54.353+08:00  INFO 7402 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T20:26:54.354+08:00  INFO 7402 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1100 ms
+2023-05-23T20:26:55.112+08:00  INFO 7402 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T20:26:55.127+08:00  INFO 7402 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 2.439 seconds (process running for 2.91)
+2023-05-23T20:27:03.324+08:00  INFO 7402 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-23T20:27:03.324+08:00  INFO 7402 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-23T20:27:03.325+08:00  INFO 7402 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-23T20:27:03.330+08:00  INFO 7402 --- [http-nio-8080-exec-1] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /getAppointmentList method: POST
+2023-05-23T20:27:03.425+08:00  INFO 7402 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-23T20:27:04.407+08:00  INFO 7402 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a300653
+2023-05-23T20:27:04.409+08:00  INFO 7402 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-23T20:34:23.308+08:00  INFO 7402 --- [http-nio-8080-exec-5] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /sendToEmail method: POST
+2023-05-23T20:34:24.735+08:00  INFO 7402 --- [http-nio-8080-exec-5] com.se.hmsbackend.service.MailService    : 邮件发送成功 2604307870@qq.com
+2023-05-23T20:34:24.736+08:00  INFO 7402 --- [http-nio-8080-exec-5] c.s.h.controller.DoctorController        : 2 sendToEmail: (patientRegisterCode:2604307870@qq.com)583128 insession:nullsessionId:D0EDBD3179E2BEA73C67DEC47DDBF83E
+2023-05-23T20:35:57.096+08:00  INFO 7402 --- [http-nio-8080-exec-8] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /docterChangepwd method: POST
+2023-05-23T20:35:57.716+08:00 ERROR 7402 --- [http-nio-8080-exec-8] c.s.h.c.GlobalExceptionController        : Cannot invoke "com.se.hmsbackend.pojo.Doctor.setDoctorPassword(String)" because "doctor" is null
+
+java.lang.NullPointerException: Cannot invoke "com.se.hmsbackend.pojo.Doctor.setDoctorPassword(String)" because "doctor" is null
+	at com.se.hmsbackend.controller.DoctorController.docterChangepwd(DoctorController.java:82) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:563) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at com.se.hmsbackend.fliter.LoginCheckFilter.doFilter(LoginCheckFilter.java:49) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-05-23T20:36:43.777+08:00  INFO 7402 --- [http-nio-8080-exec-9] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /saveIntroduction method: POST
+2023-05-23T20:38:48.311+08:00  INFO 7402 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-23T20:38:48.319+08:00  INFO 7402 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-23T21:26:03.910+08:00  INFO 8210 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 8210 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T21:26:03.912+08:00  INFO 8210 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T21:26:04.673+08:00  INFO 8210 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T21:26:04.680+08:00  INFO 8210 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T21:26:04.681+08:00  INFO 8210 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T21:26:04.748+08:00  INFO 8210 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T21:26:04.748+08:00  INFO 8210 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 792 ms
+2023-05-23T21:26:05.273+08:00  INFO 8210 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T21:26:05.283+08:00  INFO 8210 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 1.712 seconds (process running for 2.073)
+2023-05-23T21:26:13.450+08:00  INFO 8210 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-23T21:26:13.451+08:00  INFO 8210 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-23T21:26:13.452+08:00  INFO 8210 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-23T21:26:13.459+08:00  INFO 8210 --- [http-nio-8080-exec-2] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /addNews method: POST
+2023-05-23T21:28:02.799+08:00  INFO 8210 --- [http-nio-8080-exec-5] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /addNews method: POST
+2023-05-23T21:28:02.893+08:00  INFO 8210 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-23T21:28:03.990+08:00  INFO 8210 --- [http-nio-8080-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@973fd99
+2023-05-23T21:28:03.993+08:00  INFO 8210 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-23T21:29:02.670+08:00  INFO 8210 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-23T21:29:02.681+08:00  INFO 8210 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-23T21:29:06.305+08:00  INFO 8425 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 8425 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T21:29:06.308+08:00  INFO 8425 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T21:29:07.041+08:00  INFO 8425 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T21:29:07.048+08:00  INFO 8425 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T21:29:07.049+08:00  INFO 8425 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T21:29:07.104+08:00  INFO 8425 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T21:29:07.104+08:00  INFO 8425 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 752 ms
+2023-05-23T21:29:07.677+08:00  INFO 8425 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T21:29:07.687+08:00  INFO 8425 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 1.728 seconds (process running for 2.063)
+2023-05-23T21:29:15.125+08:00  INFO 8425 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-23T21:29:15.125+08:00  INFO 8425 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-23T21:29:15.126+08:00  INFO 8425 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-23T21:29:15.130+08:00  INFO 8425 --- [http-nio-8080-exec-2] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /addNews method: POST
+2023-05-23T21:29:15.226+08:00  INFO 8425 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-23T21:29:16.282+08:00  INFO 8425 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46e29cc5
+2023-05-23T21:29:16.285+08:00  INFO 8425 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-23T21:30:28.295+08:00  INFO 8425 --- [http-nio-8080-exec-5] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /deleteNews method: DELETE
+2023-05-23T21:31:13.116+08:00  INFO 8425 --- [http-nio-8080-exec-6] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /getAllNews method: POST

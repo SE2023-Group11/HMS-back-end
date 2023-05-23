@@ -1,12 +1,16 @@
 package com.se.hmsbackend.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.InfoDoctor;
 import com.se.hmsbackend.pojo.InfoPatient;
 import com.se.hmsbackend.pojo.Order;
+import com.se.hmsbackend.pojo.Patient;
 import com.se.hmsbackend.service.*;
 import com.se.hmsbackend.utils.InfoUtil;
+import com.se.hmsbackend.utils.JsonUtil;
 import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.beans.Transient;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -35,15 +40,22 @@ public class OrderController {
     private PatientService patientService;
 
     @PostMapping("/getAppointmentList")
-    public R<List<Order>> getAppointmentListDoctor(HttpServletRequest request, @RequestParam String token){
-//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
+    public R<List<JSONObject>> getAppointmentListDoctor(HttpServletRequest request, @RequestParam String token){
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
-        return R.success(orderService.getByDoctorId(nowLoggedInId));
+        List<Order> orderList = orderService.getByDoctorId(nowLoggedInId);
+        List<JSONObject> jsonObjectList = new ArrayList<>();
+        for(Order order : orderList){
+            JSONObject jsonObject = (JSONObject) JSON.toJSON(order);
+            Patient patient = patientService.getPatientById(order.getPatientId());
+            jsonObject.put("patientName", patient.getPatientName());
+            jsonObjectList.add(jsonObject);
+        }
+        jsonObjectList.sort(JsonUtil.orderOrderByTime);
+        return R.success(jsonObjectList);
     }
 
     @GetMapping("/getPatientAppointment")
     public R<List<Order>> getAppointmentListPatient(HttpServletRequest request,@RequestParam String token){
-//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(orderService.getByPatientId(nowLoggedInId));
     }

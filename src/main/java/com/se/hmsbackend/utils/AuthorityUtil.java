@@ -22,7 +22,9 @@ public class AuthorityUtil {
         "/getDoctorsBySchedule",
         "/getDoctorSchedule",
         "/getRoomName",
-        "/getPatientName"
+        "/getPatientName",
+
+        "/getAllNews"
     };
     private static final String[] patientAuthority = new String[]{
         "/getPatientMessage",
@@ -52,7 +54,9 @@ public class AuthorityUtil {
         "/getAllNotifications",
         "/getNotifyInfoByID",
         "/acceptNotify",
-        "/declineNotify"
+        "/declineNotify",
+        "/addNews",
+        "/deleteNews"
     };
     public static String getAuthority(String uri){
         if(check(noAuthority,uri))return Const.NO_AUTHORITY;
