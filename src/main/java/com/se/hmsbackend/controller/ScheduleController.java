@@ -51,7 +51,6 @@ public class ScheduleController {
 
     @PostMapping("/getSchedule")
     public R<Schedule> getSchedule(HttpServletRequest request,@RequestParam String token){
-//        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Schedule schedule = scheduleService.getScheduleByDoctorId(nowLoggedInId);
         return R.success(schedule);

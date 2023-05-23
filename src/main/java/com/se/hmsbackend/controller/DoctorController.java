@@ -41,18 +41,6 @@ public class DoctorController {
 
     @PostMapping("/sendToEmail")
     public R<String> sendToEmail(@RequestParam Integer type, @RequestParam String name,@RequestParam String email, HttpSession session) {
-        /*
-        String code = mailService.getCheckCode();
-        if(type.equals(Const.CODE_TYPE_DOCTOR_REGISTER))session.setAttribute(Const.DOCTOR_REGISTER_CODE+email,code);
-        if(type.equals(Const.CODE_TYPE_DOCTOR_FORGET))session.setAttribute(Const.DOCTOR_FORGET_CODE+email,code);
-        if(type.equals(Const.CODE_TYPE_PATIENT_REGISTER)){session.setAttribute(Const.PATIENT_REGISTER_CODE+email,code);log.info("addsuccess");}
-        if(type.equals(Const.CODE_TYPE_PATIENT_FORGET))session.setAttribute(Const.PATIENT_FORGET_CODE+email,code);
-        mailService.sendMail(name,email,code);
-        log.info(type+ " sendToEmail: ("+Const.PATIENT_REGISTER_CODE+email+")"+code+" insession:"+session.getAttribute(Const.PATIENT_REGISTER_CODE+email)+"sessionId:"+session.getId());
-        return R.success("验证码邮件发送成功");
-
-         */
-//        if(checkCodeService.getByEmailAndType(email,type)!=null)return R.error("邮箱已注册");
         String code = mailService.getCheckCode();
         checkCodeService.addCheckCode(type, email, code);
         mailService.sendMail(name,email,code);
@@ -104,10 +92,6 @@ public class DoctorController {
         }catch (Exception ignored){}
         if(admin != null){
             if(!password.equals(admin.getAdminPassword()))return R.error("密码错误");
-//            HttpSession session = request.getSession();
-//            session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_ADMIN);
-//            session.setAttribute(Const.NOW_LOGGED_IN_ID,admin.getAdminId());
-//            session.setAttribute(Const.TOKEN, session.getId());
             String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_ADMIN, admin.getAdminId().toString());
             return R.successAdmin(token);
         }
@@ -117,10 +101,6 @@ public class DoctorController {
         if(doctor == null)return R.error("用户不存在");
         if(!password.equals(doctor.getDoctorPassword()))return R.error("密码错误");
 
-//        HttpSession session = request.getSession();
-//        session.setAttribute(Const.NOW_LOGGED_IN_TYPE,Const.NOW_LOGGED_IN_TYPE_DOCTOR);
-//        session.setAttribute(Const.NOW_LOGGED_IN_ID,doctor.getDoctorId());
-//        session.setAttribute(Const.TOKEN, session.getId());
         String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_DOCTOR, doctor.getDoctorId());
         return R.success(token);
     }
@@ -156,10 +136,6 @@ public class DoctorController {
     }
     @PostMapping("/logoutDoctor")
     public R<String> logoutDoctor(@RequestParam String token,HttpServletRequest request){
-//        HttpSession session = request.getSession();
-//        session.removeAttribute(Const.TOKEN);
-//        session.removeAttribute(Const.NOW_LOGGED_IN_TYPE);
-//        session.removeAttribute(Const.NOW_LOGGED_IN_ID);
         TokenUtil.addTokenToBlack(token);
         return R.success("退出成功");
     }

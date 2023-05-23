@@ -83,11 +83,12 @@ public class TokenUtil {
         black.add(token);
     }
     public static boolean isRight(String token){
+        Claims parse = null;
         try{
-            parse(token);
+            parse = parse(token);
         }catch (Exception e){
             return false;
         }
-        return !black.contains(token);
+        return !black.contains(token) && parse!=null;
     }
 }

@@ -40,6 +40,7 @@ com/se/hmsbackend/utils/TokenUtil.class
 com/se/hmsbackend/dao/InfoAdminDetailDao.class
 com/se/hmsbackend/pojo/CheckCode.class
 com/se/hmsbackend/pojo/Order.class
+com/se/hmsbackend/timer/staticTimer.class
 com/se/hmsbackend/service/DoctorService.class
 com/se/hmsbackend/pojo/InfoAdminDetail.class
 com/se/hmsbackend/controller/DoctorController.class

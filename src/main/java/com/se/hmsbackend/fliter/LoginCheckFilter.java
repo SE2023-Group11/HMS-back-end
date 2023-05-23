@@ -23,7 +23,6 @@ public class LoginCheckFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-//        HttpSession session = request.getSession();
 
         response.setHeader("Access-Control-Allow-Origin","http://localhost:8080");
         response.setHeader("Access-Control-Allow-Credentials","true");
@@ -41,15 +40,6 @@ public class LoginCheckFilter implements Filter {
         String authority = AuthorityUtil.getAuthority(requestURI);
 
         log.info("拦截： "+requestURI+" method: "+request.getMethod());
-//        Enumeration<String> headerNames = request.getHeaderNames();
-//        while (headerNames.hasMoreElements())             //读取请求消息头
-//        {
-//            String name = headerNames.nextElement();
-//            String value = request.getHeader(name);
-//            log.info(name+": "+value);
-//        }
-//        log.info("coocie: "+ Arrays.toString(request.getCookies()));
-
 //        //测试，直接放行
 //        filterChain.doFilter(request,response);
 //        if(true)return;
@@ -74,13 +64,6 @@ public class LoginCheckFilter implements Filter {
                 return;
             }
         }
-
-//        Object tokenInSession = session.getAttribute(Const.TOKEN);
-////        token不一致,不放行
-//        if(token == null || tokenInSession==null || !token.equals(tokenInSession)){
-//            response.getWriter().write(JSON.toJSONString(R.error("Access denied")));
-//            return;
-//        }
 
         if(Const.PATIENT_AUTHORITY.equals(authority)){
             Object type = TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_TYPE);

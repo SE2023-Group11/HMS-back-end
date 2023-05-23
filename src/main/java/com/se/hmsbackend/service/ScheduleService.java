@@ -27,6 +27,9 @@ public class ScheduleService {
     public void addSchedule(Schedule schedule){
         scheduleDao.addSchedule(schedule);
     }
+    public void updateSchedule(Schedule schedule){
+        scheduleDao.updateSchedule(schedule);
+    }
     public Schedule getScheduleByDoctorId(String doctorId){
         return scheduleDao.getByDoctorId(doctorId);
     }
@@ -45,19 +48,4 @@ public class ScheduleService {
         scheduleDao.updateSchedule(schedule);
         return true;
     }
-
-//    @Async
-//    @Scheduled(cron = "0 0 0 ? * 2")
-//    public void updateScheduleStartDate(){
-//        LocalDate now = LocalDate.now();
-//        List<Schedule> schedules = getAllSchedules();
-//        for(Schedule schedule : schedules){
-//            LocalDate oldDate = schedule.getStartDate();
-//            int days = (int) ChronoUnit.DAYS.between(oldDate, now);
-//            if(days <= 7 )return;
-//            LocalDate newDate = oldDate.plusWeeks(1);
-//            schedule.setStartDate(newDate);
-//            scheduleDao.updateSchedule(schedule);
-//        }
-//    }
 }

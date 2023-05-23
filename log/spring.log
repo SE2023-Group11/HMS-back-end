@@ -42,3 +42,127 @@
 2023-05-23T10:32:52.894+08:00  INFO 5648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46801d05
 2023-05-23T10:32:52.898+08:00  INFO 5648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2023-05-23T10:33:31.709+08:00  INFO 5648 --- [http-nio-8080-exec-3] c.se.hmsbackend.fliter.LoginCheckFilter  : 拦截： /getHistory method: GET
+2023-05-23T10:35:36.215+08:00  INFO 5648 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-23T10:35:36.226+08:00  INFO 5648 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-23T10:35:55.756+08:00  INFO 5984 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 5984 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T10:35:55.758+08:00  INFO 5984 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T10:35:57.268+08:00  INFO 5984 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.935 seconds (process running for 3.114)
+2023-05-23T10:35:57.566+08:00  INFO 5984 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T10:35:57.568+08:00  INFO 5984 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
+2023-05-23T10:35:57.577+08:00  INFO 5984 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T10:35:57.579+08:00  INFO 5984 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
+2023-05-23T10:35:57.585+08:00  INFO 5984 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T10:35:57.591+08:00  INFO 5984 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
+2023-05-23T19:38:57.396+08:00  INFO 5302 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 5302 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T19:38:57.397+08:00  INFO 5302 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T19:38:58.798+08:00  INFO 5302 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.697 seconds (process running for 2.423)
+2023-05-23T19:38:59.137+08:00  INFO 5302 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T19:38:59.139+08:00  INFO 5302 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
+2023-05-23T19:38:59.152+08:00  INFO 5302 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T19:38:59.154+08:00  INFO 5302 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
+2023-05-23T19:38:59.161+08:00  INFO 5302 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T19:38:59.166+08:00  INFO 5302 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests
+2023-05-23T19:58:01.182+08:00  INFO 5856 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 5856 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T19:58:01.184+08:00  INFO 5856 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T19:58:01.951+08:00  INFO 5856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T19:58:01.959+08:00  INFO 5856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T19:58:01.959+08:00  INFO 5856 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T19:58:02.016+08:00  INFO 5856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T19:58:02.016+08:00  INFO 5856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 790 ms
+2023-05-23T19:58:02.293+08:00  WARN 5856 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'staticTimer' defined in file [/home/alpaca/items/java/HMS-back-end/target/classes/com/se/hmsbackend/timer/staticTimer.class]: Encountered invalid @Scheduled method 'orderBroken': Cron expression must consist of 6 fields (found 7 in "0 0 4 * * ? *")
+2023-05-23T19:58:02.295+08:00  INFO 5856 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-23T19:58:02.314+08:00  INFO 5856 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-05-23T19:58:02.325+08:00 ERROR 5856 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'staticTimer' defined in file [/home/alpaca/items/java/HMS-back-end/target/classes/com/se/hmsbackend/timer/staticTimer.class]: Encountered invalid @Scheduled method 'orderBroken': Cron expression must consist of 6 fields (found 7 in "0 0 4 * * ? *")
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:605) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293) ~[spring-boot-3.0.5.jar:3.0.5]
+	at com.se.hmsbackend.HmsBackEndApplication.main(HmsBackEndApplication.java:18) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'orderBroken': Cron expression must consist of 6 fields (found 7 in "0 0 4 * * ? *")
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:515) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$1(ScheduledAnnotationBeanPostProcessor.java:377) ~[spring-context-6.0.7.jar:6.0.7]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:377) ~[spring-context-6.0.7.jar:6.0.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:376) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:434) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.7.jar:6.0.7]
+	... 15 common frames omitted
+
+2023-05-23T19:58:56.073+08:00  INFO 5977 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 5977 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T19:58:56.075+08:00  INFO 5977 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T19:58:56.839+08:00  INFO 5977 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T19:58:56.846+08:00  INFO 5977 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T19:58:56.846+08:00  INFO 5977 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T19:58:56.908+08:00  INFO 5977 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T19:58:56.908+08:00  INFO 5977 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 787 ms
+2023-05-23T19:58:57.168+08:00  WARN 5977 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'staticTimer' defined in file [/home/alpaca/items/java/HMS-back-end/target/classes/com/se/hmsbackend/timer/staticTimer.class]: Encountered invalid @Scheduled method 'orderBroken': Cron expression must consist of 6 fields (found 7 in "0 0 4 * * ? *")
+2023-05-23T19:58:57.171+08:00  INFO 5977 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-23T19:58:57.181+08:00  INFO 5977 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-05-23T19:58:57.191+08:00 ERROR 5977 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'staticTimer' defined in file [/home/alpaca/items/java/HMS-back-end/target/classes/com/se/hmsbackend/timer/staticTimer.class]: Encountered invalid @Scheduled method 'orderBroken': Cron expression must consist of 6 fields (found 7 in "0 0 4 * * ? *")
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:605) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304) ~[spring-boot-3.0.5.jar:3.0.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293) ~[spring-boot-3.0.5.jar:3.0.5]
+	at com.se.hmsbackend.HmsBackEndApplication.main(HmsBackEndApplication.java:18) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'orderBroken': Cron expression must consist of 6 fields (found 7 in "0 0 4 * * ? *")
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:515) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$1(ScheduledAnnotationBeanPostProcessor.java:377) ~[spring-context-6.0.7.jar:6.0.7]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:377) ~[spring-context-6.0.7.jar:6.0.7]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:376) ~[spring-context-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:434) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.0.7.jar:6.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.7.jar:6.0.7]
+	... 15 common frames omitted
+
+2023-05-23T20:00:21.424+08:00  INFO 6155 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Starting HmsBackEndApplication using Java 17.0.7 with PID 6155 (/home/alpaca/items/java/HMS-back-end/target/classes started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T20:00:21.426+08:00  INFO 6155 --- [main] c.se.hmsbackend.HmsBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T20:00:22.180+08:00  INFO 6155 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-23T20:00:22.187+08:00  INFO 6155 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-23T20:00:22.187+08:00  INFO 6155 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-05-23T20:00:22.243+08:00  INFO 6155 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-23T20:00:22.244+08:00  INFO 6155 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 774 ms
+2023-05-23T20:00:22.798+08:00  INFO 6155 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-23T20:00:22.808+08:00  INFO 6155 --- [main] c.se.hmsbackend.HmsBackEndApplication    : Started HmsBackEndApplication in 1.731 seconds (process running for 2.07)
+2023-05-23T20:03:19.174+08:00  INFO 6464 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Starting ScheduleUtilTest using Java 17.0.7 with PID 6464 (started by alpaca in /home/alpaca/items/java/HMS-back-end)
+2023-05-23T20:03:19.176+08:00  INFO 6464 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : No active profile set, falling back to 1 default profile: "default"
+2023-05-23T20:03:20.636+08:00  INFO 6464 --- [main] c.se.hmsbackend.utils.ScheduleUtilTest   : Started ScheduleUtilTest in 1.746 seconds (process running for 2.478)
+2023-05-23T20:03:20.976+08:00  INFO 6464 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.MailUtilTest]: MailUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T20:03:20.978+08:00  INFO 6464 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.MailUtilTest
+2023-05-23T20:03:21.001+08:00  INFO 6464 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.utils.TokenUtilTest]: TokenUtilTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T20:03:21.002+08:00  INFO 6464 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.utils.TokenUtilTest
+2023-05-23T20:03:21.020+08:00  INFO 6464 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.se.hmsbackend.HmsBackEndApplicationTests]: HmsBackEndApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-05-23T20:03:21.037+08:00  INFO 6464 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.se.hmsbackend.HmsBackEndApplication for test class com.se.hmsbackend.HmsBackEndApplicationTests

@@ -14,7 +14,7 @@ public interface InfoPatientDao {
     @Select("SELECT * FROM info_patient WHERE patient_id = #{patientId}")
     public List<InfoPatient> getByPatientId(String patientId);
 
-    @Insert("INSERT INTO info_patient (patient_id, info_time, info_body) VALUES (#{patientId}, #{info_time}, #{infoBody})")
+    @Insert("INSERT INTO info_patient (patient_id, info_time, info_body) VALUES (#{patientId}, #{infoTime}, #{infoBody})")
     @Options(useGeneratedKeys = true,keyProperty = "infoId")
     public void addInfo(InfoPatient infoPatient);
 
