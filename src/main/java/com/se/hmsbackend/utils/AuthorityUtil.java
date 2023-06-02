@@ -24,7 +24,9 @@ public class AuthorityUtil {
         "/getRoomName",
         "/getPatientName",
 
-        "/getAllNews"
+        "/getAllNews",
+        "/getFirstRooms",
+        "/getSecondRoomsByFID"
     };
     private static final String[] patientAuthority = new String[]{
         "/getPatientMessage",
@@ -45,7 +47,8 @@ public class AuthorityUtil {
         "/getAppointmentList",
         "/getSchedule",
         "/ChangeAppointmentStatus",
-        "/DoctorGetPatientInfo"
+        "/DoctorGetPatientInfo",
+        "/doctorDelete"
     };
     private static final String[] adminAuthority = new String[]{
         "/changeRoomInfo",

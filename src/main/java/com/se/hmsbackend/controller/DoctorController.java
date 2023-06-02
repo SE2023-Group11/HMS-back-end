@@ -18,6 +18,7 @@ import org.apache.el.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.Doc;
 import java.util.List;
 
 @Slf4j
@@ -145,5 +146,14 @@ public class DoctorController {
 //        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         return R.success(doctorService.getDoctorById(nowLoggedInId));
+    }
+    @PostMapping("/doctorDelete")
+    public R<String> doctorDelete(@RequestParam String token){
+        TokenUtil.addTokenToBlack(token);
+        String nowloggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Doctor doctor = doctorService.getDoctorById(nowloggedInId);
+        doctor.setDoctorStatus(Const.DOCTOR_STATUS_UNVERIFIED);
+        doctorService.updateDoctor(doctor);
+        return R.success("注销成功");
     }
 }
