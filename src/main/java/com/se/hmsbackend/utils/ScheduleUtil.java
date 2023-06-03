@@ -114,4 +114,74 @@ public class ScheduleUtil {
         if(tem==13)schedule.setSun2(updateOnTime(schedule.getSun2(),time,newStatus));
         return schedule;
     }
+    public static void changeHalfDay(List<Integer> t, Integer half){
+        if(half == 0){
+            for(int i=0;i<=6;i++){
+                t.set(i,2);
+            }
+        }
+        if(half == 1){
+            for(int i=7;i<=12;i++){
+                t.set(i,2);
+            }
+        }
+    }
+    public static void submit(Schedule schedule,Integer day, Integer half){
+        if(day == 1){
+            List<Integer> t1 = scheduleStrToList(schedule.getMon1());
+            List<Integer> t2 = scheduleStrToList(schedule.getMon2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setMon1(scheduleListToString(t1));
+            schedule.setMon2(scheduleListToString(t2));
+        }
+        if(day == 2){
+            List<Integer> t1 = scheduleStrToList(schedule.getTue1());
+            List<Integer> t2 = scheduleStrToList(schedule.getTue2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setTue1(scheduleListToString(t1));
+            schedule.setTue2(scheduleListToString(t2));
+        }
+        if(day == 3){
+            List<Integer> t1 = scheduleStrToList(schedule.getWed1());
+            List<Integer> t2 = scheduleStrToList(schedule.getWed2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setWed1(scheduleListToString(t1));
+            schedule.setWed2(scheduleListToString(t2));
+        }
+        if(day == 4){
+            List<Integer> t1 = scheduleStrToList(schedule.getThu1());
+            List<Integer> t2 = scheduleStrToList(schedule.getThu2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setThu1(scheduleListToString(t1));
+            schedule.setThu2(scheduleListToString(t2));
+        }
+        if(day == 5){
+            List<Integer> t1 = scheduleStrToList(schedule.getFri1());
+            List<Integer> t2 = scheduleStrToList(schedule.getFri2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setFri1(scheduleListToString(t1));
+            schedule.setFri2(scheduleListToString(t2));
+        }
+        if(day == 6){
+            List<Integer> t1 = scheduleStrToList(schedule.getSat1());
+            List<Integer> t2 = scheduleStrToList(schedule.getSat2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setSat1(scheduleListToString(t1));
+            schedule.setSat2(scheduleListToString(t2));
+        }
+        if(day == 7){
+            List<Integer> t1 = scheduleStrToList(schedule.getSun1());
+            List<Integer> t2 = scheduleStrToList(schedule.getSun2());
+            changeHalfDay(t1,half);
+            changeHalfDay(t2,half);
+            schedule.setSun1(scheduleListToString(t1));
+            schedule.setSun2(scheduleListToString(t2));
+        }
+    }
 }

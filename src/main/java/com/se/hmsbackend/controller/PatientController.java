@@ -12,6 +12,7 @@ import com.se.hmsbackend.service.CheckCodeService;
 import com.se.hmsbackend.service.InfoPatientService;
 import com.se.hmsbackend.service.PatientService;
 import com.se.hmsbackend.utils.TokenUtil;
+import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -120,5 +121,13 @@ public class PatientController {
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Patient patient = patientService.getPatientById(nowLoggedInId);
         return R.success(patient.getPatientHistory());
+    }
+    @PostMapping("/zhuxiaoPatient")
+    public R<String> deletePatient(@RequestParam String token){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Patient patient = patientService.getPatientById(nowLoggedInId);
+        TokenUtil.addTokenToBlack(token);
+        patientService.deletePatient(patient);
+        return R.success("注销成功");
     }
 }

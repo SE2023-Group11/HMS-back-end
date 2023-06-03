@@ -1,5 +1,6 @@
 package com.se.hmsbackend.service;
 
+import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.dao.DoctorDao;
 import com.se.hmsbackend.pojo.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,30 +17,42 @@ public class DoctorService {
     private DoctorDao doctorDao;
 
     public List<Doctor> getDoctorInfo(String doctorName){
-        return doctorDao.getByName(doctorName);
+        List<Doctor> doctors = doctorDao.getByName(doctorName);
+        doctors.removeIf(doctor -> doctor.isDoctorStatus() == Const.DOCTOR_STATUS_UNVERIFIED);
+        return doctors;
     }
     public List<Doctor> getAllDoctor(){
-        return doctorDao.getAllDoctor();
+        List<Doctor> doctors = doctorDao.getAllDoctor();
+        doctors.removeIf(doctor -> doctor.isDoctorStatus() == Const.DOCTOR_STATUS_UNVERIFIED);
+        return doctors;
     }
     public Doctor getDoctorById(String doctorId){
         try {
-            return doctorDao.getById(doctorId);
+            Doctor doctor = doctorDao.getById(doctorId);
+            if(doctor.isDoctorStatus())return doctor;
+            return null;
         }catch (Exception e){
             return null;
         }
     }
     public Doctor getDoctorByNumber(String number){
         try {
-            return doctorDao.getByNumber(number);
+            Doctor doctor = doctorDao.getByNumber(number);
+            if(doctor.isDoctorStatus())return doctor;
+            return null;
         }catch (Exception e){
             return null;
         }
     }
     public Doctor getDoctorByMail(String mail){
-        return doctorDao.getByMail(mail);
+        Doctor doctor = doctorDao.getByMail(mail);
+        if(doctor.isDoctorStatus() == Const.DOCTOR_STATUS_UNVERIFIED)return null;
+        return doctor;
     }
     public List<Doctor> getDoctorBySectionId(Integer sectionId){
-        return doctorDao.getBySectionId(sectionId);
+        List<Doctor> doctors = doctorDao.getBySectionId(sectionId);
+        doctors.removeIf(doctor -> doctor.isDoctorStatus() == Const.DOCTOR_STATUS_UNVERIFIED);
+        return doctors;
     }
     public boolean updateDoctor(Doctor doctor){
         doctorDao.updateDoctor(doctor);

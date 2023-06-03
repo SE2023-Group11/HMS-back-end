@@ -44,4 +44,8 @@ public class PatientService {
         patientDao.addPatient(patient);
         return true;
     }
+    public boolean deletePatient(Patient patient){
+        patientDao.deletePatient(patient);
+        return true;
+    }
 }

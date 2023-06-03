@@ -1,6 +1,5 @@
 package com.se.hmsbackend.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
 import com.se.hmsbackend.pojo.Doctor;
@@ -15,8 +14,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -54,5 +54,53 @@ public class ScheduleController {
         String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
         Schedule schedule = scheduleService.getScheduleByDoctorId(nowLoggedInId);
         return R.success(schedule);
+    }
+
+    @PostMapping("/getJob")
+    public R<Schedule> getJob(@RequestParam String doctorID){
+        Schedule schedule = scheduleService.getScheduleByDoctorId(doctorID);
+        return R.success(schedule);
+    }
+
+    @PostMapping("/clearJob")
+    public R<String> clearJob(@RequestParam String doctorID){
+        Schedule schedule = scheduleService.getScheduleByDoctorId(doctorID);
+        schedule.setMon1(Const.SCHEDULE_CLEARED);
+
+        schedule.setMon1(Const.SCHEDULE_CLEARED);
+        schedule.setTue1(Const.SCHEDULE_CLEARED);
+        schedule.setWed1(Const.SCHEDULE_CLEARED);
+        schedule.setThu1(Const.SCHEDULE_CLEARED);
+        schedule.setFri1(Const.SCHEDULE_CLEARED);
+        schedule.setSat1(Const.SCHEDULE_CLEARED);
+        schedule.setSun1(Const.SCHEDULE_CLEARED);
+
+        schedule.setMon2(Const.SCHEDULE_CLEARED);
+        schedule.setTue2(Const.SCHEDULE_CLEARED);
+        schedule.setWed2(Const.SCHEDULE_CLEARED);
+        schedule.setThu2(Const.SCHEDULE_CLEARED);
+        schedule.setFri2(Const.SCHEDULE_CLEARED);
+        schedule.setSat2(Const.SCHEDULE_CLEARED);
+        schedule.setSun2(Const.SCHEDULE_CLEARED);
+
+        scheduleService.updateSchedule(schedule);
+        return R.success("修改成功");
+    }
+
+    @PostMapping("/submitJob")
+    public R<String> submitJob(@RequestBody Map params){
+        List<Integer> weekDay = (List<Integer>) params.get("weekDay");
+        List<Integer> halfDay = (List<Integer>) params.get("halfDay");
+        String doctorId = (String) params.get("doctorID");
+        Schedule schedule = scheduleService.getScheduleByDoctorId(doctorId);
+
+        for(Integer day : weekDay){
+            for(Integer half : halfDay){
+                ScheduleUtil.submit(schedule,day, half);
+            }
+        }
+
+        scheduleService.updateSchedule(schedule);
+        return R.success("修改成功");
     }
 }
