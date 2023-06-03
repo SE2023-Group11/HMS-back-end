@@ -3,6 +3,37 @@ server:
 spring:
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql:///hms?serverTimezone=UTC
+      url: jdbc:mysql://rm-cn-nwy37ob6e000nfno.rwlb.rds.aliyuncs.com:3306/hms?ServerTimezone=UTC
       username: root
-      password: 345210
+      password: Aa12345678
+  mail:
+    host: smtp.163.com
+    username: EmailUtil2023@163.com
+    password: HHCOSUKAWRSNRJZT
+    default-encoding: UTF-8
+    port: 465
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.163.com
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          auth: true
+          starttls:
+            enable: true
+            required: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.log4jdemo.demo4j.Demo4jApplicationTests: error
+  pattern:
+    console: "%d - %msg %n"
+  file:
+    path: ./log
+

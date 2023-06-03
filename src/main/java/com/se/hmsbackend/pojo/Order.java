@@ -1,12 +1,13 @@
 package com.se.hmsbackend.pojo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Order {
     private Integer orderId;
     private String patientId;
     private String doctorId;
-    private LocalDateTime day;
+    private LocalDate day;
     private LocalDateTime timeStart;
     private LocalDateTime timeEnd;
     private Integer orderStatus;
@@ -14,7 +15,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Integer orderId, String patientId, String doctorId, LocalDateTime day, LocalDateTime timeStart, LocalDateTime timeEnd, Integer orderStatus) {
+    public Order(Integer orderId, String patientId, String doctorId, LocalDate day, LocalDateTime timeStart, LocalDateTime timeEnd, Integer orderStatus) {
         this.orderId = orderId;
         this.patientId = patientId;
         this.doctorId = doctorId;
@@ -61,11 +62,11 @@ public class Order {
         this.doctorId = doctorId;
     }
 
-    public LocalDateTime getDay() {
+    public LocalDate getDay() {
         return day;
     }
 
-    public void setDay(LocalDateTime day) {
+    public void setDay(LocalDate day) {
         this.day = day;
     }
 

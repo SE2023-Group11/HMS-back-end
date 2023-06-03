@@ -7,14 +7,16 @@ public class Doctor {
     private String doctorMail;
     private String doctorPhone;
     private String doctorPassword;
-    private String doctorSection;
+    private Integer doctorSection;
     private String doctorTitle;
     private boolean doctorStatus;
+    private String doctorIntroduction;
+    private String doctorImg;
 
     public Doctor() {
     }
 
-    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, String doctorSection, String doctorTitle, boolean doctorStatus) {
+    public Doctor(String doctorId, String doctorName, String doctorNumber, String doctorMail, String doctorPhone, String doctorPassword, Integer doctorSection, String doctorTitle, boolean doctorStatus, String doctorIntroduction, String doctorImg) {
         this.doctorId = doctorId;
         this.doctorName = doctorName;
         this.doctorNumber = doctorNumber;
@@ -24,6 +26,8 @@ public class Doctor {
         this.doctorSection = doctorSection;
         this.doctorTitle = doctorTitle;
         this.doctorStatus = doctorStatus;
+        this.doctorIntroduction = doctorIntroduction;
+        this.doctorImg = doctorImg;
     }
 
     @Override
@@ -35,10 +39,28 @@ public class Doctor {
                 ", doctorMail='" + doctorMail + '\'' +
                 ", doctorPhone='" + doctorPhone + '\'' +
                 ", doctorPassword='" + doctorPassword + '\'' +
-                ", doctorSection='" + doctorSection + '\'' +
+                ", doctorSection=" + doctorSection +
                 ", doctorTitle='" + doctorTitle + '\'' +
                 ", doctorStatus=" + doctorStatus +
+                ", doctorIntroduction='" + doctorIntroduction + '\'' +
+                ", doctorImg='" + doctorImg + '\'' +
                 '}';
+    }
+
+    public String getDoctorImg() {
+        return doctorImg;
+    }
+
+    public void setDoctorImg(String doctorImg) {
+        this.doctorImg = doctorImg;
+    }
+
+    public String getDoctorIntroduction() {
+        return doctorIntroduction;
+    }
+
+    public void setDoctorIntroduction(String doctorIntroduction) {
+        this.doctorIntroduction = doctorIntroduction;
     }
 
     public String getDoctorId() {
@@ -89,11 +111,11 @@ public class Doctor {
         this.doctorPassword = doctorPassword;
     }
 
-    public String getDoctorSection() {
+    public Integer getDoctorSection() {
         return doctorSection;
     }
 
-    public void setDoctorSection(String doctorSection) {
+    public void setDoctorSection(Integer doctorSection) {
         this.doctorSection = doctorSection;
     }
 

@@ -1,17 +1,20 @@
 package com.se.hmsbackend.pojo;
 
+import java.time.LocalDateTime;
+
 public class InfoPatient {
     private Integer infoId;
     private String patientId;
     private String infoBody;
-
+    private LocalDateTime infoTime;
     public InfoPatient() {
     }
 
-    public InfoPatient(Integer infoId, String patientId, String infoBody) {
+    public InfoPatient(Integer infoId, String patientId, String infoBody, LocalDateTime infoTime) {
         this.infoId = infoId;
         this.patientId = patientId;
         this.infoBody = infoBody;
+        this.infoTime = infoTime;
     }
 
     @Override
@@ -20,7 +23,16 @@ public class InfoPatient {
                 "infoId=" + infoId +
                 ", patientId='" + patientId + '\'' +
                 ", infoBody='" + infoBody + '\'' +
+                ", infoTime=" + infoTime +
                 '}';
+    }
+
+    public LocalDateTime getInfoTime() {
+        return infoTime;
+    }
+
+    public void setInfoTime(LocalDateTime infoTime) {
+        this.infoTime = infoTime;
     }
 
     public Integer getInfoId() {

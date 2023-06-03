@@ -1,5 +1,6 @@
 package com.se.hmsbackend.pojo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Patient {
@@ -9,13 +10,15 @@ public class Patient {
     private String patientMail;
     private String patientPhone;
     private boolean patientSex;
-    private LocalDateTime patientBirthday;
+    private LocalDate patientBirthday;
     private String patientPassword;
+    private String patientImg;
+    private String patientHistory;
 
     public Patient() {
     }
 
-    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDateTime patientBirthday, String patientPassword) {
+    public Patient(String patientId, String patientName, String patientNumber, String patientMail, String patientPhone, boolean patientSex, LocalDate patientBirthday, String patientPassword, String patientImg, String patientHistory) {
         this.patientId = patientId;
         this.patientName = patientName;
         this.patientNumber = patientNumber;
@@ -24,12 +27,14 @@ public class Patient {
         this.patientSex = patientSex;
         this.patientBirthday = patientBirthday;
         this.patientPassword = patientPassword;
+        this.patientImg = patientImg;
+        this.patientHistory = patientHistory;
     }
 
     @Override
     public String toString() {
         return "Patient{" +
-                "patientId=" + patientId +
+                "patientId='" + patientId + '\'' +
                 ", patientName='" + patientName + '\'' +
                 ", patientNumber='" + patientNumber + '\'' +
                 ", patientMail='" + patientMail + '\'' +
@@ -37,7 +42,25 @@ public class Patient {
                 ", patientSex=" + patientSex +
                 ", patientBirthday=" + patientBirthday +
                 ", patientPassword='" + patientPassword + '\'' +
+                ", patientImg='" + patientImg + '\'' +
+                ", patientHistory='" + patientHistory + '\'' +
                 '}';
+    }
+
+    public String getPatientHistory() {
+        return patientHistory;
+    }
+
+    public void setPatientHistory(String patientHistory) {
+        this.patientHistory = patientHistory;
+    }
+
+    public String getPatientImg() {
+        return patientImg;
+    }
+
+    public void setPatientImg(String patientImg) {
+        this.patientImg = patientImg;
     }
 
     public String getPatientId() {
@@ -88,11 +111,11 @@ public class Patient {
         this.patientSex = patientSex;
     }
 
-    public LocalDateTime getPatientBirthday() {
+    public LocalDate getPatientBirthday() {
         return patientBirthday;
     }
 
-    public void setPatientBirthday(LocalDateTime patientBirthday) {
+    public void setPatientBirthday(LocalDate patientBirthday) {
         this.patientBirthday = patientBirthday;
     }
 
