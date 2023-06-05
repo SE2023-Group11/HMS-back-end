@@ -49,6 +49,7 @@ public class OrderController {
             Patient patient = patientService.getPatientById(order.getPatientId());
             jsonObject.put("patientName", patient.getPatientName());
             jsonObjectList.add(jsonObject);
+            System.out.println(jsonObject);
         }
         jsonObjectList.sort(JsonUtil.orderOrderByTime);
         return R.success(jsonObjectList);

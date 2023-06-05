@@ -89,14 +89,20 @@ public class ScheduleController {
 
     @PostMapping("/submitJob")
     public R<String> submitJob(@RequestBody Map params){
-        List<Integer> weekDay = (List<Integer>) params.get("weekDay");
-        List<Integer> halfDay = (List<Integer>) params.get("halfDay");
+        List<String> weekDay = (List<String>) params.get("weekDay");
+        List<String> halfDay = (List<String>) params.get("halfDay");
         String doctorId = (String) params.get("doctorID");
         Schedule schedule = scheduleService.getScheduleByDoctorId(doctorId);
 
-        for(Integer day : weekDay){
-            for(Integer half : halfDay){
-                ScheduleUtil.submit(schedule,day, half);
+        for(String day : weekDay){
+            for(String half : halfDay){
+                try {
+                    Integer dayInt = Integer.valueOf(day);
+                    Integer halfInt = Integer.valueOf(half);
+                    ScheduleUtil.submit(schedule, dayInt, halfInt);
+                } catch (Exception e){
+                    return R.error("数据错误"+e.getMessage());
+                }
             }
         }
 
