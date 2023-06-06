@@ -1,7 +1,9 @@
 package com.se.hmsbackend.common;
 
 import com.se.hmsbackend.pojo.Schedule;
+import com.se.hmsbackend.service.PatientService;
 import com.se.hmsbackend.service.ScheduleService;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -21,5 +23,17 @@ public class TestClass {
 //            scheduleService.updateSchedule(schedule);
 //        }
 //    }
-
+    @Autowired
+    private PatientService patientService;
+//    @Test
+//    public void test1(){
+////        System.out.println(System.currentTimeMillis());
+////        System.out.println(patientService.getNewPatientId());
+////        System.out.println(patientService.getNewPatientId());
+////        System.out.println(patientService.getNewPatientId());
+//        System.out.println(patientService.getNewPatientId());
+//        System.out.println(patientService.getNewPatientId());
+//        System.out.println(patientService.getNewPatientId());
+////
+//    }
 }

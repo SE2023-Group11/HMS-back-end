@@ -38,7 +38,14 @@ public class PatientService {
         return String.format("%0".concat(String.valueOf(length)).concat("d"), num);
     }
     public String getNewPatientId(){
-        return "P"+pad(11,patientDao.getNum());
+//        return "P"+pad(11,patientDao.getNum());
+        String id ="P"+pad(11,patientDao.getNum());
+        int res=0;
+        while(patientDao.getById(id)!=null){
+            res++;
+            id ="P"+pad(11,patientDao.getNum()+res);
+        }
+        return id;
     }
     public boolean addPatient(Patient patient){
         patientDao.addPatient(patient);

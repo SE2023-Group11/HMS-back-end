@@ -70,7 +70,13 @@ public class DoctorService {
         return String.format("%0".concat(String.valueOf(length)).concat("d"), num);
     }
     public String getNewDoctorId(){
-        return "D"+pad(11,doctorDao.getNum());
+        String id ="D"+pad(11,doctorDao.getNum());
+        int res=0;
+        while(doctorDao.getById(id)!=null){
+            res++;
+            id ="D"+pad(11,doctorDao.getNum()+res);
+        }
+        return id;
     }
     public boolean hasNumber(String number){
         Doctor doctor = doctorDao.getByNumber(number);
