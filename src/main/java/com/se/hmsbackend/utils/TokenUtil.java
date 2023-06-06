@@ -20,7 +20,7 @@ public class TokenUtil {
 //    TODO：修改token有效期
     private static String key="BRNdyltTMUZD0doOVsbfHSO8v27YS484BJZjXYNx1Qk=";
     //设置有效期                 （ 5小时）
-    private static Long millData=100 * 60*5*60*1000L;//500h
+    private static Long millData= 60*5*60*1000L;//5h
 
     /**
      * 生成密钥

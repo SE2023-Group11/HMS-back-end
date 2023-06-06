@@ -1,3 +1,4 @@
+com/se/hmsbackend/common/TestClass.class
 com/se/hmsbackend/dao/SectionDaoTest.class
 com/se/hmsbackend/utils/ScheduleUtilTest.class
 com/se/hmsbackend/dao/PatientDaoTest.class

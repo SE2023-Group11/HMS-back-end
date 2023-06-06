@@ -48,7 +48,7 @@ public class InfoAdminService {
             doctor.setDoctorStatus(Const.DOCTOR_STATUS_VERIFIED);
             doctorDao.updateDoctorExceptPW(doctor);
         } else if(type.equals(Const.INFOADMIN_TYPE_UPDATE)){
-            doctorDao.updateDoctorExceptPW(doctor);
+            doctorDao.updateDoctorExceptPWAndImg(doctor);
         }
         return infoAdmin;
     }

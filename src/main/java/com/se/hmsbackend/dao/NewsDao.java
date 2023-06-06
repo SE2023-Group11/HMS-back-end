@@ -13,11 +13,11 @@ public interface NewsDao {
     @Select("SELECT * FROM news WHERE id=#{id}")
     public News getById(Integer id);
 
-    @Insert("INSERT INTO news (img,body) VALUES (#{img},#{body})")
+    @Insert("INSERT INTO news (img,body,date) VALUES (#{img},#{body},#{date})")
     @Options(useGeneratedKeys = true,keyProperty = "id")
     public void insertNews(News news);
 
-    @Update("UPDATE news SET img=#{img},body=#{body} WHERE id=#{id}")
+    @Update("UPDATE news SET img=#{img},body=#{body},date=#{date} WHERE id=#{id}")
     public void updateNews(News news);
 
     @Delete("DELETE FROM news WHERE id=#{id}")

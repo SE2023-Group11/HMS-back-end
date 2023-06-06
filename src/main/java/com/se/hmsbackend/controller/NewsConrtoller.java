@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class NewsConrtoller {
@@ -25,9 +26,17 @@ public class NewsConrtoller {
         return R.error("添加失败");
     }
     @DeleteMapping("/deleteNews")
-    public R<String> deleteNews(@RequestParam Integer id){
-        News news = newsService.getById(id);
-        if(newsService.deleteNews(news))return R.success("删除成功");
-        return R.error("删除失败");
+    public R<String> deleteNews(@RequestBody Map params){
+        List<Integer> ids = null;
+        try {
+            ids = (List<Integer>) params.get("id");
+        }catch (Exception e){
+            return R.error("参数错误: "+e.getMessage());
+        }
+        for(Integer id : ids) {
+           News news = newsService.getById(id);
+           newsService.deleteNews(news);
+        }
+        return R.success("删除成功");
     }
 }

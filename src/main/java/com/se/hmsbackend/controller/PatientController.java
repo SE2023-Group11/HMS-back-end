@@ -71,6 +71,11 @@ public class PatientController {
         String token = TokenUtil.getToken(Const.NOW_LOGGED_IN_TYPE_PATIENT, patient.getPatientId());
         return R.success(token);
     }
+    @PostMapping("/logoutPatient")
+    public R<String> logoutDoctor(@RequestParam String token){
+        TokenUtil.addTokenToBlack(token);
+        return R.success("退出成功");
+    }
     @PostMapping("/changePatient")
     public R<String> changeNowLoggedDoctor(@RequestBody Patient patient, @RequestParam String token){
 //        String nowLoggedInId = (String) request.getSession().getAttribute(Const.NOW_LOGGED_IN_ID);
@@ -129,5 +134,19 @@ public class PatientController {
         TokenUtil.addTokenToBlack(token);
         patientService.deletePatient(patient);
         return R.success("注销成功");
+    }
+    @PostMapping("/patientChangeImg")
+    public R<String> patientChangeImg(@RequestParam String token, @RequestParam String url){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Patient patient = patientService.getPatientById(nowLoggedInId);
+        patient.setPatientImg(url);
+        patientService.updatePatient(patient);
+        return R.success("修改成功");
+    }
+    @GetMapping("/getPatientImg")
+    public R<String> getPatientImg(@RequestParam String token){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Patient patient = patientService.getPatientById(nowLoggedInId);
+        return R.success(patient.getPatientImg());
     }
 }

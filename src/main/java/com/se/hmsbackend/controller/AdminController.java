@@ -10,6 +10,7 @@ import com.se.hmsbackend.service.DoctorService;
 import com.se.hmsbackend.service.InfoAdminService;
 import com.se.hmsbackend.service.InfoDoctorService;
 import com.se.hmsbackend.service.SectionService;
+import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,11 @@ public class AdminController {
         List<Doctor> doctors = doctorService.getDoctorInfo(doctorName);
         if(doctors.size() == 0)return R.error("不存在");
         return R.success(doctors);
+    }
+    @PostMapping("/logoutAdmin")
+    public R<String> logoutDoctor(@RequestParam String token){
+        TokenUtil.addTokenToBlack(token);
+        return R.success("退出成功");
     }
     @PostMapping("/changeDoctorInfo")
     public R<JSONObject> changeDoctorInfo(@RequestParam String id, @RequestParam String info, HttpServletRequest request){

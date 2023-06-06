@@ -14,6 +14,7 @@ import com.se.hmsbackend.utils.TokenUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.users.SparseUserDatabase;
 import org.apache.el.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -155,5 +156,19 @@ public class DoctorController {
         doctor.setDoctorStatus(Const.DOCTOR_STATUS_UNVERIFIED);
         doctorService.updateDoctor(doctor);
         return R.success("注销成功");
+    }
+    @PostMapping("/doctorChangeImg")
+    public R<String> doctorChangeImg(@RequestParam String token, @RequestParam String url){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Doctor doctor = doctorService.getDoctorById(nowLoggedInId);
+        doctor.setDoctorImg(url);
+        doctorService.updateDoctor(doctor);
+        return R.success("修改成功");
+    }
+    @GetMapping("/getDoctorImg")
+    public R<String> getDoctorImg(@RequestParam String token){
+        String nowLoggedInId = (String) TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_ID);
+        Doctor doctor = doctorService.getDoctorById(nowLoggedInId);
+        return R.success(doctor.getDoctorImg());
     }
 }

@@ -10,4 +10,5 @@
 /home/alpaca/items/java/HMS-back-end/src/test/java/com/se/hmsbackend/utils/TokenUtilTest.java
 /home/alpaca/items/java/HMS-back-end/src/test/java/com/se/hmsbackend/dao/ScheduleDaoTest.java
 /home/alpaca/items/java/HMS-back-end/src/test/java/com/se/hmsbackend/dao/SectionDaoTest.java
+/home/alpaca/items/java/HMS-back-end/src/test/java/com/se/hmsbackend/common/TestClass.java
 /home/alpaca/items/java/HMS-back-end/src/test/java/com/se/hmsbackend/utils/ScheduleUtilTest.java

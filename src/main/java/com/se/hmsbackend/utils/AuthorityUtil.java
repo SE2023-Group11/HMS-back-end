@@ -37,7 +37,10 @@ public class AuthorityUtil {
         "/deleteAppointment",
         "/savehistory",
         "/getHistory",
-        "/zhuxiaoPatient"
+        "/zhuxiaoPatient",
+        "/patientChangeImg",
+        "/getPatientImg",
+        "/logoutPatient"
     };
     private static final String[] doctorAuthority = new String[]{
         "/getDoctorMessage",
@@ -49,7 +52,9 @@ public class AuthorityUtil {
         "/getSchedule",
         "/ChangeAppointmentStatus",
         "/DoctorGetPatientInfo",
-        "/doctorDelete"
+        "/doctorDelete",
+        "/doctorChangeImg",
+        "/getDoctorImg"
     };
     private static final String[] adminAuthority = new String[]{
         "/changeRoomInfo",
@@ -63,7 +68,8 @@ public class AuthorityUtil {
         "/deleteNews",
         "/submitJob",
         "/clearJob",
-        "/getJob"
+        "/getJob",
+        "/logoutAdmin"
     };
     public static String getAuthority(String uri){
         if(check(noAuthority,uri))return Const.NO_AUTHORITY;

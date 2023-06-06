@@ -52,6 +52,8 @@ public class LoginCheckFilter implements Filter {
         }
 
         String token = request.getParameter(Const.TOKEN);
+//        log.info("token:("+token+") requireAuthority:("+authority+") authority:("+TokenUtil.parse(token).get(Const.NOW_LOGGED_IN_TYPE)+")");
+        log.info("token:("+token+")");
         if(!TokenUtil.isRight(token)){
             response.getWriter().write(JSON.toJSONString(R.error("Token错误或已过期")));
             return;
