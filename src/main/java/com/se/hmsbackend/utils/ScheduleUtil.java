@@ -65,6 +65,7 @@ public class ScheduleUtil {
     public static String getScheduleOnDate(Schedule schedule, String date){
         LocalDate newDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         int tem = (int) ChronoUnit.DAYS.between(schedule.getStartDate(), newDate);
+//        System.out.println(schedule+" "+date+" "+tem);
         if(tem==0)return schedule.getMon1();
         if(tem==1)return schedule.getTue1();
         if(tem==2)return schedule.getWed1();

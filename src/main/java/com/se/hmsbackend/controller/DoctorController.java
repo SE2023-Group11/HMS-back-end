@@ -3,10 +3,7 @@ package com.se.hmsbackend.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.se.hmsbackend.common.Const;
 import com.se.hmsbackend.common.R;
-import com.se.hmsbackend.pojo.Admin;
-import com.se.hmsbackend.pojo.CheckCode;
-import com.se.hmsbackend.pojo.Doctor;
-import com.se.hmsbackend.pojo.InfoDoctor;
+import com.se.hmsbackend.pojo.*;
 import com.se.hmsbackend.service.*;
 import com.se.hmsbackend.service.MailService;
 import com.se.hmsbackend.utils.StringUtil;
@@ -20,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.print.Doc;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Slf4j
@@ -40,6 +39,8 @@ public class DoctorController {
     private MailService mailService;
     @Autowired
     private CheckCodeService checkCodeService;
+    @Autowired
+    private ScheduleService scheduleService;
 
     @PostMapping("/sendToEmail")
     public R<String> sendToEmail(@RequestParam Integer type, @RequestParam String name,@RequestParam String email, HttpSession session) {
@@ -66,6 +67,7 @@ public class DoctorController {
         doctor.setDoctorStatus(Const.DOCTOR_STATUS_UNVERIFIED);
         doctor.setDoctorImg("https://f.pz.al/pzal/2023/05/03/5e6420e7ffe6f.png");
         doctor.setDoctorIntroduction("暂无");
+        doctor.setDoctorSection(25);
         boolean res = doctorService.addDoctor(doctor);
 
 //        将此条注册信息添加到管理员消息库，等待管理员验证
